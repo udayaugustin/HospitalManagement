@@ -1,4 +1,5 @@
 ﻿using System;
+using HospitalManagement.Model;
 using HospitalManagement.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -13,7 +14,7 @@ namespace HospitalManagement
 
             //MainPage = new MainPage();            
             MainPage = new MasterPage();
-            (MainPage as MasterDetailPage).Detail = new NavigationPage(new PatientDetailPage());
+            (MainPage as MasterDetailPage).Detail = new NavigationPage(new PatientList());
 
             //MainPage = new NavigationPage(new PatientDetailPage());
         }
@@ -23,7 +24,7 @@ namespace HospitalManagement
             // Handle when your app starts
 
             var connection = DependencyService.Get<ISQLiteDb>().GetConnection();
-            connection.CreateTableAsync<Booking>();
+            connection.CreateTableAsync<Patient>();
         }
 
         protected override void OnSleep()

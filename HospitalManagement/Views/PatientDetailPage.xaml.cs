@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HospitalManagement.Model;
+using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +14,10 @@ namespace HospitalManagement.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PatientDetailPage : TabbedPage
     {
-        public PatientDetailPage()
+        SQLiteAsyncConnection connection;
+        List<Patient> patientList;
+        Patient _selectedpatient;
+        public PatientDetailPage(Patient patient)
         {
             InitializeComponent();
         }

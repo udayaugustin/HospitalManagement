@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HospitalManagement.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -43,9 +44,9 @@ namespace HospitalManagement.Views
                     mainPage.Detail = new NavigationPage(new AddPatient());
                 break;
 
-                case "New Treatment":
-                    mainPage.Detail = new NavigationPage(new PatientDetailPage());
-                break;
+               // case "New Treatment":
+               //     mainPage.Detail = new NavigationPage(new PatientDetailPage(patient));
+              //  break;
                     
                 case "Report":
                     mainPage.Detail = new NavigationPage(new MainPage());
