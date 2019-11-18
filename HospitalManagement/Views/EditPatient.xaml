@@ -2,11 +2,43 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HospitalManagement.Views.EditPatient">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    <NavigationPage.TitleView>
+        <Label Text="Edit Patient" Style="{StaticResource NavigationTitle}"/>
+    </NavigationPage.TitleView>
+    <Grid Padding="10" RowSpacing="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Text="Name" Grid.Row="0" Grid.Column="0" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
+        <Entry  x:Name="Name" Grid.Row="0" Grid.Column="1" FontSize="18"/>
+        <Label Text="Contact Number" Grid.Row="1" Grid.Column="0" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
+        <Entry  x:Name="PhoneNo" Grid.Row="1" Grid.Column="1" FontSize="18"/>
+        <Label Text="Age" Grid.Row="2" Grid.Column="0" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
+        <Entry x:Name="Age" Grid.Row="2" Grid.Column="1"  FontSize="18"/>
+        <Label Text="Sex" Grid.Row="3" Grid.Column="0" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
+        <Picker x:Name="Sex" Grid.Row="3" Grid.Column="1"  FontSize="18">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Male</x:String>
+                    <x:String>Female</x:String>
+                    <x:String>Transgender</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        <Label Text="Address" Grid.Row="4" Grid.Column="0" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
+        <Entry x:Name="Address" Grid.Row="4" Grid.Column="1"  FontSize="18"/>
+        <Button Text="Update" Clicked="Update" Grid.Row="7" Grid.ColumnSpan="1"  Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+    </Grid>
 </ContentPage>

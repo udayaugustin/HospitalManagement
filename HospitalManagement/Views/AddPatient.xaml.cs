@@ -21,7 +21,7 @@ namespace HospitalManagement.Views
         {
             var name = Name.Text;
             var age = Convert.ToInt32(Age.Text);
-            var sex = Sex.ItemsSource;
+            var sex = Sex.SelectedItem;
             var mobileNo = MobileNo.Text;
             var address = Address.Text;
 

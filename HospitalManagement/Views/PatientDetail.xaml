@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HospitalManagement.Views.PatientDetail">
+    <NavigationPage.TitleView>
+        <Label Text="Patient Details" Style="{StaticResource NavigationTitle}"/>
+    </NavigationPage.TitleView>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="AddApmt" Clicked="Add_Appoinment"                 
+                 Order="Primary"
+                 Priority="0" />
+    </ContentPage.ToolbarItems>
+    <Grid Padding="10" RowSpacing="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Text="Name" Grid.Row="0" Grid.Column="0" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
+        <Label  x:Name="Name" Grid.Row="0" Grid.Column="1" FontSize="18"/>
+        <Label Text="Contact Number" Grid.Row="1" Grid.Column="0" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
+        <Label  x:Name="PhoneNo" Grid.Row="1" Grid.Column="1" FontSize="18"/>
+        <Label Text="Age" Grid.Row="2" Grid.Column="0" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
+        <Label x:Name="Age" Grid.Row="2" Grid.Column="1"  FontSize="18"/>
+        <Label Text="Sex" Grid.Row="3" Grid.Column="0" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
+        <Label x:Name="Sex" Grid.Row="3" Grid.Column="1"  FontSize="18"/>
+        <Label Text="Address" Grid.Row="4" Grid.Column="0" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
+        <Label x:Name="Address" Grid.Row="4" Grid.Column="1"  FontSize="18"/>
+        <!--<Label Text="Advance Amount" Grid.Row="5" Grid.Column="0" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
+        <Label x:Name="AdvanceAmount" Grid.Row="5" Grid.Column="1"  FontSize="18"/>
+        <Label Text="Mode of Payment" Grid.Row="6" Grid.Column="0" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
+        <Label x:Name="PaymentMode" Grid.Row="6" Grid.Column="1"  FontSize="18"/>
+        <Label Text="Recived Amount" Grid.Row="9" Grid.Column="0" VerticalOptions="Center" FontSize="20"  Style="{StaticResource BalanceTag}"/>
+        <Entry Placeholder="Enter Amount" Grid.Row="9" Grid.Column="1" FontSize="20"  x:Name="RecivedAmount" />-->
+        <Button Text="New Treatment" Clicked="Treatment" Grid.Row="7" Grid.ColumnSpan="1"  Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+
+    </Grid>
+</ContentPage>

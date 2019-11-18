@@ -12,16 +12,16 @@ using Xamarin.Forms.Xaml;
 namespace HospitalManagement.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PatientDetailPage : TabbedPage
+    public partial class TreatmentDetailPage : TabbedPage
     {
         SQLiteAsyncConnection connection;
         List<Patient> patientList;
         Patient _selectedpatient;
-        public PatientDetailPage(Patient patient)
+
+        public TreatmentDetailPage()
         {
             InitializeComponent();
         }
-
         private void Save(object sender, EventArgs e)
         {
             

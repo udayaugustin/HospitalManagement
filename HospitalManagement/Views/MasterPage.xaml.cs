@@ -44,9 +44,9 @@ namespace HospitalManagement.Views
                     mainPage.Detail = new NavigationPage(new AddPatient());
                 break;
 
-               // case "New Treatment":
-               //     mainPage.Detail = new NavigationPage(new PatientDetailPage(patient));
-              //  break;
+                case "New Treatment":
+                mainPage.Detail = new NavigationPage(new TreatmentDetailPage());
+                break;
                     
                 case "Report":
                     mainPage.Detail = new NavigationPage(new MainPage());

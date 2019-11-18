@@ -33,12 +33,12 @@ namespace HospitalManagement.Views
 
         }
 
-        private void RefreshPatientList()
+        private async void RefreshPatientList()
         {
-            var patient = connection.Table<Patient>().ToListAsync().Result;
-            var patients = new List<Patient>();
+            var patient = await connection.Table<Patient>().ToListAsync();
+           
             if (patient != null)
-                patientlistview.ItemsSource = patients;
+                patientlistview.ItemsSource = patient;
         }
 
         private async void Edit_Clicked(object sender, EventArgs e)
@@ -78,7 +78,7 @@ namespace HospitalManagement.Views
         {
             var patient = e.Item as Patient;
 
-            await Navigation.PushAsync(new PatientDetailPage(patient));
+            await Navigation.PushAsync(new PatientDetail(patient));
         }
     }
 }
