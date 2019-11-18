@@ -1,0 +1,10 @@
+﻿#PatientInfoBlock{    
+}
+#PatientInfoBlock>Editor{
+    margin-bottom: 20;
+    height: 250;
+
+}
+#PatientDetailView>ContentPage{
+    padding:10;
+}

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="HospitalManagement.App">
+    <Application.Resources>
+        <StyleSheet Source="/Views/Css/Style.css" />
+        <OnPlatform x:TypeArguments="x:String" x:Key="ProximaNovaRegular">
+            <On Platform="Android" Value="Proxima-nova-regular.ttf#Proxima Nova Rg"/>
+        </OnPlatform>
+        <OnPlatform x:TypeArguments="x:String" x:Key="ProximaNovaBold">
+            <On Platform="Android" Value="Proxima-nova-bold.ttf#Proxima Nova Rg Bold"/>
+        </OnPlatform>
+
+        <Style TargetType="Label">
+            <Setter Property="FontFamily" Value="{StaticResource ProximaNovaRegular}"/>
+            <Setter Property="TextColor" Value="Black"/>
+        </Style>
+        <Style TargetType="Label" x:Key="BalanceTag">
+            <Setter Property="FontFamily" Value="{StaticResource ProximaNovaBold}"/>
+            <Setter Property="TextColor" Value="Black"/>
+        </Style>
+
+        <Style TargetType="Entry">
+            <Setter Property="FontFamily" Value="{StaticResource ProximaNovaRegular}"/>
+            <Setter Property="TextColor" Value="Black"/>            
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="{StaticResource ProximaNovaRegular}"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="BackgroundColor" Value="#2E9AFE"/>
+            <Setter Property="WidthRequest" Value="120"/>
+            <Setter Property="HorizontalOptions" Value="EndAndExpand"/>
+        </Style>
+
+        <Style TargetType="DatePicker">
+            <Setter Property="FontFamily" Value="{StaticResource ProximaNovaRegular}"/>
+            <Setter Property="TextColor" Value="Black"/>
+        </Style>
+
+        <Style TargetType="Editor">
+            <Setter Property="FontFamily" Value="{StaticResource ProximaNovaRegular}"/>
+            <Setter Property="AutoSize" Value="TextChanges"/>
+            <!--<Setter Property="BackgroundColor" Value="#EFF8FB"/>-->
+        </Style>
+
+        <Style x:Key="NavigationTitle" TargetType="Label">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+
+        <Style x:Key="BalanceAmount" TargetType="Label" BasedOn="{StaticResource BalanceTag}">
+            <Setter Property="TextColor" Value="Red"/>
+            <Setter Property="FontAttributes" Value="Italic"/>
+            <Setter Property="FontFamily" Value="{StaticResource ProximaNovaRegular}"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="HorizontalOptions" Value="EndAndExpand"/>
+           <Style.Triggers>
+               <DataTrigger TargetType="Label" Binding="{Binding BalanceAmount}" Value="0">
+                   <Setter Property="TextColor" Value="Black"/>
+               </DataTrigger>
+           </Style.Triggers>
+        </Style>
+    </Application.Resources>
+</Application>

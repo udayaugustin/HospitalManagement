@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HospitalManagement.Views.BookingListTappedPage" Title="Booking List">
+    <!--Pages can be added as references or inline-->
+    <ContentPage Title="Today">
+        <StackLayout>
+            <Label Text="No Record Found" HorizontalOptions="Center" Margin="0,20" x:Name="TodayNoRecordLabel"/>
+            <ListView  x:Name="TodayListview" ItemTapped="Listview_ItemTapped" HasUnevenRows="True" SeparatorColor="Gray" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                    <MenuItem Text="Edit" Clicked="Edit_Clicked"/>
+                                    <MenuItem Text="Delete" Clicked="Delete_Clicked"/>
+                                </ViewCell.ContextActions>
+                                <Grid Padding="10" >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Name}" FontSize="20" Style="{StaticResource BalanceTag}" Grid.Row="0" Grid.Column="0"/>
+                                <Label Text="{Binding CheckinDate, StringFormat='In: {0:dd-MMM-yy (ddd)}'}" FontSize="18" Grid.Row="1" Grid.Column="0"/>
+                                <Label Text="{Binding AdvanceAmount,  StringFormat='Advance: Rs.{0}'}" FontSize="18" Grid.Row="0" Grid.Column="1" HorizontalOptions="EndAndExpand"/>
+                                <Label Text="{Binding BalanceAmount,  StringFormat='Balance: Rs.{0}'}"  FontSize="20" Style="{StaticResource BalanceTag}"  Grid.Row="1" Grid.Column="1" HorizontalOptions="EndAndExpand"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Future">
+        <StackLayout>
+            <Label Text="No Record Found" HorizontalOptions="Center" Margin="0,20" x:Name="FutureNoRecordLabel"/>
+            <ListView  x:Name="FutureListview" ItemTapped="Listview_ItemTapped" HasUnevenRows="True" SeparatorColor="Gray" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                    <MenuItem Text="Edit" Clicked="Edit_Clicked"/>
+                                    <MenuItem Text="Delete" Clicked="Delete_Clicked"/>
+                                </ViewCell.ContextActions>
+                                <Grid Padding="10" >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Name}" FontSize="20" Style="{StaticResource BalanceTag}" Grid.Row="0" Grid.Column="0"/>
+                                <Label Text="{Binding CheckinDate, StringFormat='In: {0:dd-MMM-yy (ddd)}'}" FontSize="18" Grid.Row="1" Grid.Column="0"/>
+                                <Label Text="{Binding AdvanceAmount,  StringFormat='Advance: Rs.{0}'}" FontSize="18" Grid.Row="0" Grid.Column="1" HorizontalOptions="EndAndExpand"/>
+                                <Label Text="{Binding BalanceAmount,  StringFormat='Balance: Rs.{0}'}"  FontSize="20" Style="{StaticResource BalanceTag}"  Grid.Row="1" Grid.Column="1" HorizontalOptions="EndAndExpand"/>
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="All">
+        <StackLayout>
+            <Label Text="No Record Found" HorizontalOptions="Center" Margin="0,20" x:Name="AllNoRecordLabel"/>
+            <ListView  x:Name="AllListview" ItemTapped="Listview_ItemTapped" HasUnevenRows="True" SeparatorColor="Gray" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                    <MenuItem Text="Edit" Clicked="Edit_Clicked"/>
+                                    <MenuItem Text="Delete" Clicked="Delete_Clicked"/>
+                                </ViewCell.ContextActions>
+                                <Grid Padding="10" >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Name}" FontSize="20" Style="{StaticResource BalanceTag}" Grid.Row="0" Grid.Column="0"/>
+                                <Label Text="{Binding CheckinDate, StringFormat='In: {0:dd-MMM-yy (ddd)}'}" FontSize="18" Grid.Row="1" Grid.Column="0"/>
+                                <Label Text="{Binding AdvanceAmount,  StringFormat='Advance: Rs.{0}'}" FontSize="18" Grid.Row="0" Grid.Column="1" HorizontalOptions="EndAndExpand"/>
+                                <Label Text="{Binding BalanceAmount,  StringFormat='Balance: Rs.{0}'}"  FontSize="20" Style="{StaticResource BalanceTag}"  Grid.Row="1" Grid.Column="1" HorizontalOptions="EndAndExpand"/>
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage>
+</TabbedPage>

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HospitalManagement.Views.PatientDetailPage"
+            x:Name="PatientDetailView" Title="Patient Detail">
+    <!--Pages can be added as references or inline-->    
+    <ContentPage Title="Info" x:Name="PatientInfoBlock">
+        <StackLayout>
+            <Label Text="Cheif Complaint"/>
+            <Editor x:Name="CheifComplaint"/>
+
+            <Label Text="Patient History"/>
+            <Editor x:Name="PatientHistory"/>
+
+            <Label Text="Diagnosis"/>
+            <Editor x:Name="Diagnosis"/>
+
+            <Label Text="Treatment Plan"/>
+            <Editor x:Name="TreatmentPlan"/>
+
+            <Button Text="Save" Clicked="Save"/>
+        </StackLayout>
+    </ContentPage>
+
+    <ContentPage Title="Appointment">
+        <ContentPage.ToolbarItems>
+            <ToolbarItem Text="New" Order="Primary" Clicked="OpenAddAppointmentPage" />
+        </ContentPage.ToolbarItems>
+        <StackLayout>
+            <Frame BorderColor="#2E9AFE" CornerRadius="10" Padding="10" Margin="0,0,0,10" HasShadow="False">
+                <StackLayout>
+                    <Label Text="Appointment No 1:"/>
+                    <Label Text="Date: 21 Nov 2019"/>
+                    <Editor Placeholder="Plan"/>
+                    <Editor Placeholder="Action Done"/>
+                    <Button Text="Update"/>
+                </StackLayout>
+            </Frame>
+
+            <Frame BorderColor="#2E9AFE" CornerRadius="10" Padding="10" HasShadow="False">
+                <StackLayout>
+                    <Label Text="Appointment No 2:"/>
+                    <Label Text="Date: 25 Nov 2019"/>
+                    <Editor Placeholder="Plan"/>
+                    <Editor Placeholder="Action Done"/>
+                    <Button Text="Update"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage>
+
+    <ContentPage Title="Payment">
+        <StackLayout>
+            <Entry Placeholder="Total Treatment Cost"/>
+            <Editor Placeholder="Advance/Initial Fee Recived"/>
+            <Label Text="Balance Amount: Rs.XXXX" Margin="0,0,0,20"/>
+
+            <Entry Text="Recived Amount"/>
+            <Button Text="Update"/>
+        </StackLayout>
+    </ContentPage>
+</TabbedPage>

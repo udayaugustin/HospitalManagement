@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" Title="Sync Data"
+             x:Class="HospitalManagement.Views.SyncData">
+    <NavigationPage.TitleView>
+        <Label Text="Sync Data" Style="{StaticResource NavigationTitle}"/>
+    </NavigationPage.TitleView>
+    
+    <StackLayout VerticalOptions="FillAndExpand">
+
+        
+        <Button Text="Start Sync" x:Name="sync" Clicked="Sync_Clicked"/>
+        <ActivityIndicator x:Name="indicator" VerticalOptions="CenterAndExpand"  />
+    </StackLayout>
+   
+</ContentPage>
