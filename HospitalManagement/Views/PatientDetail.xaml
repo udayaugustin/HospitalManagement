@@ -42,7 +42,8 @@
         <Label x:Name="PaymentMode" Grid.Row="6" Grid.Column="1"  FontSize="18"/>
         <Label Text="Recived Amount" Grid.Row="9" Grid.Column="0" VerticalOptions="Center" FontSize="20"  Style="{StaticResource BalanceTag}"/>
         <Entry Placeholder="Enter Amount" Grid.Row="9" Grid.Column="1" FontSize="20"  x:Name="RecivedAmount" />-->
-        <Button Text="New Treatment" Clicked="Treatment" Grid.Row="7" Grid.ColumnSpan="1"  Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
-
+        <StackLayout>
+            <Button Text="New Treatment" Clicked="Treatment" Grid.Row="7" Grid.ColumnSpan="1"  Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+        </StackLayout>
     </Grid>
 </ContentPage>

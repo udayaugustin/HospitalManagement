@@ -40,5 +40,5 @@
         <Label Text="Address" Grid.Row="4" Grid.Column="0" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
         <Entry x:Name="Address" Grid.Row="4" Grid.Column="1"  FontSize="18"/>
         <Button Text="Update" Clicked="Update" Grid.Row="7" Grid.ColumnSpan="1"  Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
-    </Grid>
+    </Grid>   
 </ContentPage>
