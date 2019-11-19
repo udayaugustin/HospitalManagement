@@ -15,7 +15,8 @@ namespace HospitalManagement.Views
 	public partial class PatientDetail : ContentPage
 	{
         SQLiteAsyncConnection connection;
-        List<Patient> patientList;
+        List<Treatment> TreatmentList;
+        Treatment treatment;
         Patient _selectedpatient;
         public PatientDetail (Patient patient)
 		{
@@ -23,6 +24,7 @@ namespace HospitalManagement.Views
             connection = DependencyService.Get<ISQLiteDb>().GetConnection();
             _selectedpatient = patient;
             GetData(patient);
+            GetData(treatment);
         }
 
         private void GetData(Patient patient)
@@ -35,6 +37,14 @@ namespace HospitalManagement.Views
           
         }
 
+        private async void GetData(Treatment treatment)
+        {
+            TreatmentList = new List<Treatment>();
+            TreatmentList = await connection.Table<Treatment>().Where(t => t.PatientId == _selectedpatient.Id).ToListAsync();
+            treatmentlist.ItemsSource = TreatmentList;
+
+        }
+
         private async void Add_Appoinment(object sender, EventArgs e)
         {
 
@@ -44,7 +54,8 @@ namespace HospitalManagement.Views
         private void Treatment(object sender, EventArgs e)
         {
             var mainPage = Application.Current.MainPage as MasterDetailPage;
-            mainPage.Detail = new NavigationPage(new TreatmentDetailPage());
+            mainPage.Detail =  new NavigationPage(new TreatmentDetailPage(_selectedpatient.Id));
+           
         }
     }
 }

@@ -25,8 +25,7 @@ namespace HospitalManagement.Views
         {
             var menuList = new List<MenuItem>
             {
-                new MenuItem{ Title = "Patient"},
-                new MenuItem{ Title = "New Treatment"},                
+                new MenuItem{ Title = "Patient"},                             
                 new MenuItem{ Title = "Report"},
                             
             };
@@ -42,10 +41,6 @@ namespace HospitalManagement.Views
             {
                 case "Patient":
                     mainPage.Detail = new NavigationPage(new AddPatient());
-                break;
-
-                case "New Treatment":
-                mainPage.Detail = new NavigationPage(new TreatmentDetailPage());
                 break;
                     
                 case "Report":

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,16 @@ namespace HospitalManagement.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Appointment : ContentPage
 	{
-		public Appointment ()
+        SQLiteAsyncConnection connection;
+
+        public Appointment ()
 		{
 			InitializeComponent ();
 		}
-	}
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
