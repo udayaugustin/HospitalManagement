@@ -26,6 +26,7 @@ namespace HospitalManagement
             var connection = DependencyService.Get<ISQLiteDb>().GetConnection();
             connection.CreateTableAsync<Patient>();
             connection.CreateTableAsync<Treatment>();
+            connection.CreateTableAsync<Appoinment>();
         }
 
         protected override void OnSleep()

@@ -16,13 +16,27 @@ namespace HospitalManagement.Views
     {
         SQLiteAsyncConnection connection;
         int  patientId;
+        List<Treatment> TreatmentList;
+        Treatment _selectedtreatment;
 
         public TreatmentDetailPage(int Id)
         {
             InitializeComponent();
             connection = DependencyService.Get<ISQLiteDb>().GetConnection();
+            _selectedtreatment = new Treatment();
+         //   treatment = connection.Table<Treatment>().Where(t => t.PatientId == _selectedtreatment.Id).ToString();
             patientId = Id;
+         //   GetData(treatment);
         }
+
+        private void GetData(Treatment treatment)
+        {
+            CheifComplaint.Text = treatment.Cheif_Complaint;
+            PatientHistory.Text = treatment.Patient_History;
+            Diagnosis.Text = treatment.Diagnosis;
+            TreatmentPlan.Text = treatment.Treatment_Plan;
+        }
+
         private async void Save(object sender, EventArgs e)
         {
             var cheifcomplaint = CheifComplaint.Text;
@@ -45,7 +59,7 @@ namespace HospitalManagement.Views
         private void OpenAddAppointmentPage(object sender, EventArgs e)
         {
             var mainPage = Application.Current.MainPage as MasterDetailPage;
-            mainPage.Detail = new NavigationPage(new Appointment());
+          //  mainPage.Detail = new NavigationPage(new Appointment());
         }
     }
 }

@@ -48,7 +48,7 @@ namespace HospitalManagement.Views
         private async void Add_Appoinment(object sender, EventArgs e)
         {
 
-            await Navigation.PushAsync(new Appointment());
+            await Navigation.PushAsync(new AddAppointment());
         }
 
         private void Treatment(object sender, EventArgs e)
@@ -56,6 +56,12 @@ namespace HospitalManagement.Views
             var mainPage = Application.Current.MainPage as MasterDetailPage;
             mainPage.Detail =  new NavigationPage(new TreatmentDetailPage(_selectedpatient.Id));
            
+        }
+
+        private void Treatmentlist_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var treatment = e.SelectedItem as Treatment;
+            Navigation.PushAsync(new TreatmentDetailPage(treatment.Id));
         }
     }
 }

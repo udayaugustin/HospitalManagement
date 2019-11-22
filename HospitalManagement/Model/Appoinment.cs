@@ -8,6 +8,8 @@ namespace HospitalManagement.Model
     class Appoinment
     {
         [AutoIncrement][PrimaryKey]
+        public int TreatmentId { get; set; }
+
         public int Id { get; set; }
 
         public DateTime Date { get; set; }
