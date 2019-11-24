@@ -7,17 +7,20 @@
     <MasterDetailPage.Master>
         <ContentPage Title="Panel"  Padding="0">
             <StackLayout>
-              <StackLayout BackgroundColor="#33CEFF" HorizontalOptions="Fill" Padding="10">
-                  <Label Text="Menu" FontSize="18" TextColor="White"/>
+              <StackLayout HorizontalOptions="Fill" Padding="10">
+                    <Label Text="Menu" FontSize="18" TextColor="#33CEFF"/>
               </StackLayout>
               
               <ListView x:Name="listView" HasUnevenRows="True" ItemTapped="ListView_ItemTapped">
                   <ListView.ItemTemplate> 
                       <DataTemplate>
                             <ViewCell>
-                                <StackLayout Orientation="Horizontal">
-                                    <Image Source="{Binding Icon}" />
-                                    <Label Text="{Binding Title}" Margin="10" FontSize="18"/>
+                                <StackLayout Padding="10" Orientation="Horizontal">
+                                    <ContentView Padding="0,0,30,0">
+                                    <Image Source="{Binding Image}" VerticalOptions="Center" />
+                                   </ContentView>
+                                        <Label Text="{Binding Title}" Margin="10" FontSize="18"/>
+                                    
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>
