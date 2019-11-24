@@ -17,6 +17,7 @@ namespace HospitalManagement.Services
         private HttpClient httpClient;
         UserDetailResponse userResponse;
 
+
         public UserService()
         {
             httpClient = new HttpClient();

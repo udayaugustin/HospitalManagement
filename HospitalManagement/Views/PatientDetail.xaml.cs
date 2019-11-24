@@ -14,54 +14,40 @@ namespace HospitalManagement.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class PatientDetail : ContentPage
 	{
-        SQLiteAsyncConnection connection;
-        List<Treatment> TreatmentList;
-        Treatment treatment;
-        Patient _selectedpatient;
+        private SQLiteAsyncConnection connection;
+        private List<Treatment> TreatmentList;
+        private Patient patient;
         public PatientDetail (Patient patient)
 		{
 			InitializeComponent ();
             connection = DependencyService.Get<ISQLiteDb>().GetConnection();
-            _selectedpatient = patient;
-            GetData(patient);
-            GetData(treatment);
+            this.patient = patient;
+            GetData();            
         }
 
-        private void GetData(Patient patient)
+        private async void GetData()
         {
             Name.Text = patient.Name;
             PhoneNo.Text = patient.MobileNo;
             Age.Text = Convert.ToString(patient.Age);
             Sex.Text = patient.Sex;
             Address.Text = patient.Address;
-          
-        }
 
-        private async void GetData(Treatment treatment)
-        {
             TreatmentList = new List<Treatment>();
-            TreatmentList = await connection.Table<Treatment>().Where(t => t.PatientId == _selectedpatient.Id).ToListAsync();
+            TreatmentList = await connection.Table<Treatment>().Where(t => t.PatientId == patient.Id).ToListAsync();
             treatmentlist.ItemsSource = TreatmentList;
+        }        
 
-        }
-
-        private async void Add_Appoinment(object sender, EventArgs e)
-        {
-
-            await Navigation.PushAsync(new AddAppointment());
-        }
-
-        private void Treatment(object sender, EventArgs e)
+        private void AddTreatment(object sender, EventArgs e)
         {
             var mainPage = Application.Current.MainPage as MasterDetailPage;
-            mainPage.Detail =  new NavigationPage(new TreatmentDetailPage(_selectedpatient.Id, new Treatment()));
-           
+            mainPage.Detail =  new NavigationPage(new TreatmentDetailPage(patient.Id, new Treatment()));
         }
 
         private void Treatmentlist_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var treatment = e.SelectedItem as Treatment;
-          //  Navigation.PushAsync(new TreatmentDetailPage(treatment));
+            Navigation.PushAsync(new TreatmentDetailPage(patient.Id, treatment));
         }
     }
 }
