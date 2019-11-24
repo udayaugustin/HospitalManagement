@@ -28,16 +28,23 @@
         <ContentPage.ToolbarItems>
             <ToolbarItem Text="New" Order="Primary" Clicked="OpenAddAppointmentPage" />
         </ContentPage.ToolbarItems>
-        <StackLayout>
-            <ListView ItemsSource="{Binding appoinmentList, Mode=TwoWay}" HasUnevenRows="True" SeparatorVisibility="None" x:Name="listView">
+        <StackLayout Padding="20">
+            <ListView  ItemsSource="{Binding appoinmentList, Mode=TwoWay}" HasUnevenRows="True" SeparatorVisibility="None" x:Name="listView">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Orientation="Vertical">
-                                <Label Text="{Binding Id, StringFormat='Appointment Id: {0}'}"/>
-                                <Label Text="{Binding Date, StringFormat='{0:dd/mm/yy}'}"/>
-                                <Editor Placeholder="Plan" HeightRequest="80" Text="{Binding TreatmentPlan}"/>
-                                <Editor Placeholder="Action Done" Text="{Binding TreatmentDone}"/>
+                            <StackLayout Orientation="Vertical" Padding="10" >
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout Orientation="Horizontal">
+                                    <Image Source="appoinment.png"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Vertical">
+                                    <Label FontSize="18" Text="{Binding Id, StringFormat='Appointment Id: {0}'}"/>
+                                    <Label FontSize="15" Text="{Binding Date, StringFormat='{0:dd/mm/yy}'}"/>
+                                </StackLayout>
+                            </StackLayout>
+                            <Editor Placeholder="Plan"  Text="{Binding TreatmentPlan}"/>
+                             <Editor Placeholder="Action Done" Text="{Binding TreatmentDone}"/>
                                 <Button Text="Update" Clicked="UpdateAppointment" CommandParameter="{Binding .}"/>
                             </StackLayout>                                
                         </ViewCell>

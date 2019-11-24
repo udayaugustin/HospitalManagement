@@ -2,9 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:custom="clr-namespace:HospitalManagement" x:Class="HospitalManagement.Views.AddPatient" Title="Personal Info">
     <ContentPage.Content>
-        <StackLayout>
-            <custom:CustomEntry BorderWidth="5" BorderColor="Red" IsCurvedCornersEnabled="True" CornerRadius="10" Placeholder="Name" Keyboard="Text" x:Name="Name"/>
-            <custom:CustomEntry BorderWidth="1" BorderColor="Red"  IsCurvedCornersEnabled="True" CornerRadius="10" Placeholder="Age" Keyboard="Numeric" x:Name="Age"/>
+        <StackLayout Padding="20">
+            <custom:CustomEntry Placeholder="Name" Keyboard="Text" x:Name="Name"/>
+            <custom:CustomEntry  Placeholder="Age" Keyboard="Numeric" x:Name="Age"/>
             <Picker x:Name="Sex" Title="Sex">
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
@@ -14,8 +14,8 @@
                     </x:Array>
                 </Picker.ItemsSource>
             </Picker>
-            <custom:CustomEntry BorderWidth="1" BorderColor="Red" IsCurvedCornersEnabled="True" CornerRadius="10" Placeholder="Mobile No" Keyboard="Numeric" x:Name="MobileNo"/>
-            <custom:CustomEntry BorderWidth="1" BorderColor="Red" IsCurvedCornersEnabled="True" CornerRadius="10" Placeholder="Address"  x:Name="Address"/>
+            <custom:CustomEntry  Placeholder="Mobile No" Keyboard="Numeric" x:Name="MobileNo"/>
+            <custom:CustomEntry  Placeholder="Address"  x:Name="Address"/>
             <Button Text="Save" Clicked="Save"/>
         </StackLayout>
     </ContentPage.Content>

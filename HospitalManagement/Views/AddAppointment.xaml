@@ -3,13 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:custom="clr-namespace:HospitalManagement"
              x:Class="HospitalManagement.Views.AddAppointment">
+    <NavigationPage.TitleView>
+        <Label Text="Add Appointment" Style="{StaticResource NavigationTitle}"/>
+    </NavigationPage.TitleView>
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical">
+        <StackLayout Orientation="Vertical" Padding="20">
             <DatePicker x:Name="datepicker" />
             <TimePicker x:Name="timepicker"/>
             <custom:CustomEntry   Placeholder="Treatment Plan" x:Name="treatmentplan"  />
             <custom:CustomEntry Placeholder="Treatment Done" x:Name="treatmentdone" />
-            <Button Text="Create" Clicked="Save"/>
+            <Button Text="Create"  Clicked="Save"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

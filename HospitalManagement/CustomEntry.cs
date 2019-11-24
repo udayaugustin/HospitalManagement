@@ -14,7 +14,7 @@ namespace HospitalManagement
         public Color BorderColor
         {
             get => (Color)GetValue(BorderColorProperty);
-            set => SetValue(BorderColorProperty, value);
+            set => SetValue(BorderColorProperty, Color.Black);
         }
 
         public static readonly BindableProperty BorderWidthProperty =
@@ -24,7 +24,7 @@ namespace HospitalManagement
         public int BorderWidth
         {
             get => (int)GetValue(BorderWidthProperty);
-            set => SetValue(BorderWidthProperty, value);
+            set => SetValue(BorderWidthProperty, 2);
         }
         public static readonly BindableProperty CornerRadiusProperty =
         BindableProperty.Create(nameof(CornerRadius),
@@ -33,7 +33,7 @@ namespace HospitalManagement
         public double CornerRadius
         {
             get => (double)GetValue(CornerRadiusProperty);
-            set => SetValue(CornerRadiusProperty, value);
+            set => SetValue(CornerRadiusProperty, 0);
         }
         public static readonly BindableProperty IsCurvedCornersEnabledProperty =
         BindableProperty.Create(nameof(IsCurvedCornersEnabled),
@@ -42,7 +42,7 @@ namespace HospitalManagement
         public bool IsCurvedCornersEnabled
         {
             get => (bool)GetValue(IsCurvedCornersEnabledProperty);
-            set => SetValue(IsCurvedCornersEnabledProperty, value);
+            set => SetValue(IsCurvedCornersEnabledProperty, false);
         }
     }
 }

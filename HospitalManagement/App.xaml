@@ -20,7 +20,7 @@
 
         <Style TargetType="Entry">
             <Setter Property="FontFamily" Value="{StaticResource ProximaNovaRegular}"/>
-            <Setter Property="TextColor" Value="Black"/>            
+            <Setter Property="TextColor" Value="Black"/>
         </Style>
 
         <Style TargetType="Button">

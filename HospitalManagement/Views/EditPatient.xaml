@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:custom="clr-namespace:HospitalManagement"
              x:Class="HospitalManagement.Views.EditPatient">
     <NavigationPage.TitleView>
         <Label Text="Edit Patient" Style="{StaticResource NavigationTitle}"/>
@@ -22,11 +23,11 @@
         </Grid.ColumnDefinitions>
 
         <Label Text="Name" Grid.Row="0" Grid.Column="0" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
-        <Entry  x:Name="Name" Grid.Row="0" Grid.Column="1" FontSize="18"/>
+        <custom:CustomEntry  x:Name="Name" Grid.Row="0" Grid.Column="1" FontSize="18"/>
         <Label Text="Contact Number" Grid.Row="1" Grid.Column="0" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
-        <Entry  x:Name="PhoneNo" Grid.Row="1" Grid.Column="1" FontSize="18"/>
+        <custom:CustomEntry  x:Name="PhoneNo" Grid.Row="1" Grid.Column="1" FontSize="18"/>
         <Label Text="Age" Grid.Row="2" Grid.Column="0" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
-        <Entry x:Name="Age" Grid.Row="2" Grid.Column="1"  FontSize="18"/>
+        <custom:CustomEntry x:Name="Age" Grid.Row="2" Grid.Column="1"  FontSize="18"/>
         <Label Text="Sex" Grid.Row="3" Grid.Column="0" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
         <Picker x:Name="Sex" Grid.Row="3" Grid.Column="1"  FontSize="18">
             <Picker.ItemsSource>
@@ -38,7 +39,7 @@
             </Picker.ItemsSource>
         </Picker>
         <Label Text="Address" Grid.Row="4" Grid.Column="0" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
-        <Entry x:Name="Address" Grid.Row="4" Grid.Column="1"  FontSize="18"/>
+        <custom:CustomEntry x:Name="Address" Grid.Row="4" Grid.Column="1"  FontSize="18"/>
         <Button Text="Update" Clicked="Update" Grid.Row="7" Grid.ColumnSpan="1"  Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
     </Grid>   
 </ContentPage>

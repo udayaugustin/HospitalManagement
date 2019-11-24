@@ -11,11 +11,15 @@ using Android.Runtime;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
+using HospitalManagement;
+using HospitalManagement.Droid;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
+[assembly: ExportRenderer(typeof(CustomEntry), typeof(CustomEntryRenderer))]
 namespace HospitalManagement.Droid
 {
+
     public class CustomEntryRenderer : EntryRenderer
     {
         protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
@@ -54,3 +58,6 @@ namespace HospitalManagement.Droid
         }
     }
 }
+
+
+
