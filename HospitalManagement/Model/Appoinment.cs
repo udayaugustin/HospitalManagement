@@ -7,14 +7,14 @@ namespace HospitalManagement.Model
 {
     class Appoinment
     {
-        [AutoIncrement][PrimaryKey]
-        public int TreatmentId { get; set; }
-
+        [PrimaryKey,AutoIncrement]        
         public int Id { get; set; }
+
+        public int TreatmentId { get; set; }
 
         public DateTime Date { get; set; }
 
-        public DateTime Time { get; set; }
+        public TimeSpan Time { get; set; }
 
         public string TreatmentPlan { get; set; }
 

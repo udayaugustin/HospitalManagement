@@ -18,6 +18,8 @@ namespace HospitalManagement.Model
 
         public string Diagnosis { get; set; }
 
-        public string Treatment_Plan {get; set;}
+        public string TreatmentPlan {get; set;}
+
+        public int TreatmentCost { get; set; }
     }
 }

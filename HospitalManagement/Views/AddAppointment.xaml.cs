@@ -15,12 +15,12 @@ namespace HospitalManagement.Views
 	public partial class AddAppointment : ContentPage
 	{
         SQLiteAsyncConnection connection;
-
-        public AddAppointment ()
+        private int treatmentId;
+        public AddAppointment(int id)
 		{
 			InitializeComponent ();
             connection = DependencyService.Get<ISQLiteDb>().GetConnection();
-
+            treatmentId = id;
         }
 
         private async void Save(object sender, EventArgs e)
@@ -32,14 +32,16 @@ namespace HospitalManagement.Views
 
             var appointment = new Appoinment()
             {
+                TreatmentId = treatmentId, 
                 Date = date,
-                Time = Convert.ToDateTime(time),
+                Time = time,
                 TreatmentPlan = treatment_plan,
                 TreatmentDone = treatment_done
-
             };
             await connection.InsertAsync(appointment);
 
+            var mainPage = Application.Current.MainPage as MasterDetailPage;
+            await mainPage.Detail.Navigation.PopModalAsync();
         }
     }
 }

@@ -3,21 +3,25 @@
             x:Name="TreatmentDetailView" Title="Treatment Detail">
     <!--Pages can be added as references or inline-->    
     <ContentPage Title="Info" x:Name="PatientInfoBlock">
-        <StackLayout>
-            <Label Text="Cheif Complaint"/>
-            <Editor x:Name="CheifComplaint"/>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Cheif Complaint"/>
+                <Editor x:Name="CheifComplaint"/>
 
-            <Label Text="Patient History"/>
-            <Editor x:Name="PatientHistory"/>
+                <Label Text="Patient History"/>
+                <Editor x:Name="PatientHistory"/>
 
-            <Label Text="Diagnosis"/>
-            <Editor x:Name="Diagnosis"/>
+                <Label Text="Diagnosis"/>
+                <Editor x:Name="Diagnosis"/>
 
-            <Label Text="Treatment Plan"/>
-            <Editor x:Name="TreatmentPlan"/>
+                <Label Text="Treatment Plan"/>
+                <Editor x:Name="TreatmentPlan"/>
 
-            <Button Text="Save" Clicked="Save"/>
-        </StackLayout>
+                <Entry Placeholder="Cost" x:Name="TreatmentCost"/>
+
+                <Button Text="Save" Clicked="Save"/>
+            </StackLayout>
+        </ScrollView>
     </ContentPage>
 
     <ContentPage Title="Appointment">
@@ -25,36 +29,21 @@
             <ToolbarItem Text="New" Order="Primary" Clicked="OpenAddAppointmentPage" />
         </ContentPage.ToolbarItems>
         <StackLayout>
-            <Frame BorderColor="#2E9AFE" CornerRadius="10" Padding="10" Margin="0,0,0,10" HasShadow="False">
-                <StackLayout>
-                    <Label Text="Appointment No 1:"/>
-                    <Label Text="Date: 21 Nov 2019"/>
-                    <Editor Placeholder="Plan"/>
-                    <Editor Placeholder="Action Done"/>
-                    <Button Text="Update"/>
-                </StackLayout>
-            </Frame>
-
-            <Frame BorderColor="#2E9AFE" CornerRadius="10" Padding="10" HasShadow="False">
-                <StackLayout>
-                    <Label Text="Appointment No 2:"/>
-                    <Label Text="Date: 25 Nov 2019"/>
-                    <Editor Placeholder="Plan"/>
-                    <Editor Placeholder="Action Done"/>
-                    <Button Text="Update"/>
-                </StackLayout>
-            </Frame>
-        </StackLayout>
-    </ContentPage>
-
-    <ContentPage Title="Payment">
-        <StackLayout>
-            <Entry Placeholder="Total Treatment Cost"/>
-            <Editor Placeholder="Advance/Initial Fee Recived"/>
-            <Label Text="Balance Amount: Rs.XXXX" Margin="0,0,0,20"/>
-
-            <Entry Text="Recived Amount"/>
-            <Button Text="Update"/>
-        </StackLayout>
-    </ContentPage>
+            <ListView ItemsSource="{Binding appoinmentList, Mode=TwoWay}" HasUnevenRows="True" SeparatorVisibility="None" x:Name="listView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding Id, StringFormat='Appointment Id: {0}'}"/>
+                                <Label Text="{Binding Date, StringFormat='{0:dd/mm/yy}'}"/>
+                                <Editor Placeholder="Plan" HeightRequest="80" Text="{Binding TreatmentPlan}"/>
+                                <Editor Placeholder="Action Done" Text="{Binding TreatmentDone}"/>
+                                <Button Text="Update" Clicked="UpdateAppointment" CommandParameter="{Binding .}"/>
+                            </StackLayout>                                
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>                
+        </StackLayout>        
+    </ContentPage>    
 </TabbedPage>

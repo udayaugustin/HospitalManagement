@@ -44,7 +44,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Button Text="New Treatment" Clicked="Treatment"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+            <Button Text="New Treatment" Clicked="AddTreatment"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
         </StackLayout>
     </StackLayout>
 
