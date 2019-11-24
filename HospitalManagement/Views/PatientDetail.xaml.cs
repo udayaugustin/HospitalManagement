@@ -54,14 +54,14 @@ namespace HospitalManagement.Views
         private void Treatment(object sender, EventArgs e)
         {
             var mainPage = Application.Current.MainPage as MasterDetailPage;
-            mainPage.Detail =  new NavigationPage(new TreatmentDetailPage(_selectedpatient.Id));
+            mainPage.Detail =  new NavigationPage(new TreatmentDetailPage(_selectedpatient.Id, new Treatment()));
            
         }
 
         private void Treatmentlist_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var treatment = e.SelectedItem as Treatment;
-            Navigation.PushAsync(new TreatmentDetailPage(treatment.Id));
+          //  Navigation.PushAsync(new TreatmentDetailPage(treatment));
         }
     }
 }

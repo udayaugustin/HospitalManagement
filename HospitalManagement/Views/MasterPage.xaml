@@ -5,7 +5,7 @@
         <ToolbarItem IconImageSource="sync.png" Clicked="Synch" Order="Primary"/>
     </MasterDetailPage.ToolbarItems>
     <MasterDetailPage.Master>
-        <ContentPage Title="Panel" Padding="0">
+        <ContentPage Title="Panel"  Padding="0">
             <StackLayout>
               <StackLayout BackgroundColor="#33CEFF" HorizontalOptions="Fill" Padding="10">
                   <Label Text="Menu" FontSize="18" TextColor="White"/>
@@ -15,7 +15,10 @@
                   <ListView.ItemTemplate> 
                       <DataTemplate>
                             <ViewCell>
-                                <Label Text="{Binding Title}" Margin="10" FontSize="18"/>
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="{Binding Icon}" />
+                                    <Label Text="{Binding Title}" Margin="10" FontSize="18"/>
+                                </StackLayout>
                             </ViewCell>
                         </DataTemplate>
                   </ListView.ItemTemplate>

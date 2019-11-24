@@ -8,6 +8,8 @@ namespace HospitalManagement
     {
         public string Title { get; set; }
 
+        public string Image { get; set; }
+
     }
 }
 

@@ -25,8 +25,8 @@ namespace HospitalManagement.Views
         {
             var menuList = new List<MenuItem>
             {
-                new MenuItem{ Title = "Patient"},                             
-                new MenuItem{ Title = "Report"},
+                new MenuItem{ Title = "Patient", Image = "component.png" },                             
+                new MenuItem{ Title = "Report", Image = "todo.png"},
                             
             };
 

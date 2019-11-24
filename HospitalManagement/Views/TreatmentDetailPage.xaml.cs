@@ -17,16 +17,15 @@ namespace HospitalManagement.Views
         SQLiteAsyncConnection connection;
         int  patientId;
         List<Treatment> TreatmentList;
-        Treatment _selectedtreatment;
+        Treatment treatment;
 
-        public TreatmentDetailPage(int Id)
+        public TreatmentDetailPage(int PatientId, Treatment treatment)
         {
             InitializeComponent();
-            connection = DependencyService.Get<ISQLiteDb>().GetConnection();
-            _selectedtreatment = new Treatment();
-         //   treatment = connection.Table<Treatment>().Where(t => t.PatientId == _selectedtreatment.Id).ToString();
-            patientId = Id;
-         //   GetData(treatment);
+            connection = DependencyService.Get<ISQLiteDb>().GetConnection();           
+            patientId = PatientId;
+            this.treatment = treatment;
+            GetData(treatment);
         }
 
         private void GetData(Treatment treatment)
@@ -43,16 +42,14 @@ namespace HospitalManagement.Views
             var patienthistory = PatientHistory.Text;
             var diagnosis = Diagnosis.Text;
             var treatmentplan = TreatmentPlan.Text;
-
-            var treatment = new Treatment
-            {
-                Cheif_Complaint = cheifcomplaint,
-                Patient_History = patienthistory,
-                Diagnosis = diagnosis,
-                Treatment_Plan = treatmentplan,
-                PatientId = patientId,
-            };
-            await connection.InsertAsync(treatment);
+            var t =new Treatment();
+            t.Cheif_Complaint = cheifcomplaint;
+            t.Patient_History = patienthistory;
+            t.Diagnosis = diagnosis;
+            t.Treatment_Plan = treatmentplan;
+            t.PatientId = patientId;
+           
+            await connection.InsertAsync(t);
            
         }
 
