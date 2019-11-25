@@ -6,9 +6,9 @@
             <ScrollView>
                 <StackLayout Orientation="Vertical">
                     <StackLayout Orientation="Vertical">
-                        <DatePicker x:Name="ReceivedDate"/>
-                        <Picker Title="Choose Patient" SelectedIndexChanged="PatientSelector_SelectedIndexChanged" x:Name="PatientListPicker" />
-                        <custom:CustomEntry Keyboard="Numeric" Placeholder="Amount" x:Name="ReceivedAmount"/>
+                        <DatePicker x:Name="ReceivedDate" TextColor="#46A3ED"/>
+                        <Picker Title="Choose Patient" TextColor="#46A3ED" SelectedIndexChanged="PatientSelector_SelectedIndexChanged" x:Name="PatientListPicker" />
+                        <custom:CustomEntry TextColor="#46A3ED" Keyboard="Numeric" Placeholder="Amount" x:Name="ReceivedAmount"/>
                         <Button Text="Submit" Clicked="UpdateReceivedAmount" HorizontalOptions="EndAndExpand"/>
                     </StackLayout>                    
 
@@ -37,7 +37,7 @@
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>                                    
                                     </Grid.ColumnDefinitions>
-                                        <Label Text="{Binding Date, StringFormat='{0:dd-MMM-yy}'}" FontSize="16" VerticalTextAlignment="Start" HorizontalTextAlignment="Start"  Grid.Column="0"/>
+                                        <Label Text="{Binding Date, StringFormat='{0:dd-MMM-yy}'}"  FontSize="16" VerticalTextAlignment="Start" HorizontalTextAlignment="Start"  Grid.Column="0"/>
                                         <Label Text="{Binding PatientName}" VerticalTextAlignment="Center" FontSize="16" HorizontalTextAlignment="Center"  Grid.Column="1"/>
                                         <Label Text="{Binding ReceivedAmount}" VerticalTextAlignment="Center" FontSize="16" HorizontalTextAlignment="End" Grid.Column="2"/>
                                 </Grid>
@@ -55,9 +55,9 @@
             <ScrollView>
                 <StackLayout Orientation="Vertical">
                     <StackLayout Orientation="Vertical">
-                        <DatePicker x:Name="PaidDate"/>
-                        <custom:CustomEntry Placeholder="Name" x:Name="Name"/>
-                        <custom:CustomEntry Placeholder="Amount" Keyboard="Numeric" x:Name="PaidAmount"/>
+                        <DatePicker x:Name="PaidDate" TextColor="#46A3ED"/>
+                        <custom:CustomEntry TextColor="#46A3ED" Placeholder="Name" x:Name="Name"/>
+                        <custom:CustomEntry TextColor="#46A3ED" Placeholder="Amount" Keyboard="Numeric" x:Name="PaidAmount"/>
                         <Button Text="Pay" Clicked="UpdatePaidAmount"/>
                     </StackLayout>
                     

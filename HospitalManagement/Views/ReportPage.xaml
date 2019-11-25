@@ -2,10 +2,10 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HospitalManagement.Views.ReportPage">
     <ContentPage Title="Income">
         <StackLayout Padding="10">
-            <StackLayout Orientation="Horizontal">                
-                <DatePicker x:Name="IncomeFromDate"/>
+            <StackLayout Orientation="Horizontal">
+                <DatePicker x:Name="IncomeFromDate" TextColor="#46A3ED"/>
                 <Label Text="To" VerticalTextAlignment="Center"/>
-                <DatePicker x:Name="IncomeToDate"/>                
+                <DatePicker x:Name="IncomeToDate" TextColor="#46A3ED"/>                
             </StackLayout>
             <Button Text="Submit" Clicked="GenerateIncomeReport"/>
             <StackLayout Orientation="Horizontal">
@@ -51,10 +51,10 @@
 
     <ContentPage Title="Expense">
         <StackLayout Padding="10">
-            <StackLayout Orientation="Horizontal">                
-                <DatePicker x:Name="ExpenseFromDate"/>
-                <Label Text="To"/>
-                <DatePicker x:Name="ExpenseToDate"/>                
+            <StackLayout Orientation="Horizontal">
+                <DatePicker x:Name="ExpenseFromDate" TextColor="#46A3ED"/>
+                <Label Text="To" VerticalTextAlignment="Center"/>
+                <DatePicker x:Name="ExpenseToDate" TextColor="#46A3ED"/>                
             </StackLayout>
             <Button Text="Submit" Clicked="GenerateExpenseReport"/>
             <Label x:Name="TotalExpense" HorizontalOptions="EndAndExpand"/>
