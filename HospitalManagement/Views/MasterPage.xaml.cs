@@ -26,7 +26,7 @@ namespace HospitalManagement.Views
             var menuList = new List<MenuItem>
             {
                 new MenuItem{ Title = "Patient List", Image = "component.png"},
-                new MenuItem{ Title = "Cashbook", Image = "money.png" },
+                new MenuItem{ Title = "Cash Book", Image = "money.png" },
                 new MenuItem{ Title = "Report", Image = "todo.png"},
                 new MenuItem{ Title= "Signout", Image = "signout.png"}
             };
@@ -40,10 +40,6 @@ namespace HospitalManagement.Views
             var menu = e.Item as MenuItem;
             switch (menu.Title)
             {
-                case "Cashbook":
-                    mainPage.Detail = new NavigationPage(new AddPatient());
-                    break;
-
                 case "Patient List":
                     mainPage.Detail = new NavigationPage(new PatientList());
                     break;

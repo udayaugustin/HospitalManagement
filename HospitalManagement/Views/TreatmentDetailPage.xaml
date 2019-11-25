@@ -20,8 +20,8 @@
 
                 <Label Text="Treatment Plan"/>
                 <controls:ExtendedEditor TextColor="#46A3ED" x:Name="TreatmentPlan"/>
-
-                <custom:CustomEntry TextColor="#46A3ED" Placeholder="Cost" x:Name="TreatmentCost"/>
+                <Label Text="Cost"/>
+                <custom:CustomEntry TextColor="#46A3ED"  x:Name="TreatmentCost"/>
 
                 <Button Text="Save" Clicked="Save"/>
             </StackLayout>

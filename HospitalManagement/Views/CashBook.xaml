@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HospitalManagement.Views.CashBook">
-    <StackLayout>
+    <StackLayout Padding="10">
         <ScrollView>
             <StackLayout Orientation="Vertical">
                 <StackLayout Orientation="Horizontal">
@@ -12,6 +12,9 @@
 
                 <Label FontSize="16" x:Name="TransactionTitle"/>
                 <Grid BackgroundColor="LightGray" Padding="5,10" HeightRequest="100">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
