@@ -38,12 +38,12 @@
                     <Label Text="Treatment List" TextColor="#1976D3"  HeightRequest="35" FontSize="22" HorizontalOptions="FillAndExpand"/>
                     <Image Source="sortdown.png" VerticalOptions="Center" />
                 </StackLayout>
-            <ListView x:Name="treatmentlist" HasUnevenRows="True" ItemSelected="Treatmentlist_ItemSelected" >
+            <ListView x:Name="treatmentlist" HasUnevenRows="True" SeparatorColor="#1976D3" ItemSelected="Treatmentlist_ItemSelected" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Padding="10" VerticalOptions="Center">
-                            <Label FontSize="20" VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="{Binding Cheif_Complaint}"  />
+                                <Label FontSize="20" VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="{Binding Cheif_Complaint}"  />
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
