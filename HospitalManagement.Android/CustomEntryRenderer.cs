@@ -22,6 +22,11 @@ namespace HospitalManagement.Droid
 
     public class CustomEntryRenderer : EntryRenderer
     {
+        public CustomEntryRenderer(Context context) : base(context)
+        {
+
+        }
+
         protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
         {
             base.OnElementChanged(e);
@@ -38,17 +43,19 @@ namespace HospitalManagement.Droid
                     // Thickness of the stroke line  
                     _gradientBackground.SetStroke(view.BorderWidth, view.BorderColor.ToAndroid());
 
+                    _gradientBackground.SetGradientRadius(0);
+
                     // Radius for the curves  
                     _gradientBackground.SetCornerRadius(
-                        DpToPixels(this.Context, Convert.ToSingle(view.CornerRadius)));
+                        DpToPixels(this.Context, 0));
 
                     // set the background of the   
                     Control.SetBackground(_gradientBackground);
                 }
                 // Set padding for the internal text from border  
                 Control.SetPadding(
-                    (int)DpToPixels(this.Context, Convert.ToSingle(12)), Control.PaddingTop,
-                    (int)DpToPixels(this.Context, Convert.ToSingle(12)), Control.PaddingBottom);
+                    (int)DpToPixels(this.Context, Convert.ToSingle(5)), Control.PaddingTop,
+                    (int)DpToPixels(this.Context, Convert.ToSingle(5)), Control.PaddingBottom);
             }
         }
         public static float DpToPixels(Context context, float valueInDp)

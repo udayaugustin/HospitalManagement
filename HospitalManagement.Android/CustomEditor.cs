@@ -94,8 +94,9 @@ namespace HospitalManagement.Droid
         void ApplyBorder()
         {
             GradientDrawable gd = new GradientDrawable();
-            gd.SetCornerRadius(10);
-            gd.SetStroke(2, Color.Black.ToAndroid());
+            gd.SetCornerRadius(0);
+            gd.SetGradientRadius(0);
+            gd.SetStroke(2, Color.FromHex("#50B1FF").ToAndroid());
             this.Control.Background = gd;
         }
     }

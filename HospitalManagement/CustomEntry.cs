@@ -9,7 +9,7 @@ namespace HospitalManagement
     {
         public static readonly BindableProperty BorderColorProperty =
      BindableProperty.Create(nameof(BorderColor),
-         typeof(Color), typeof(CustomEntry), Color.Gray);
+         typeof(Color), typeof(CustomEntry), Color.FromHex("#50B1FF"));
         // Gets or sets BorderColor value  
         public Color BorderColor
         {
@@ -26,6 +26,7 @@ namespace HospitalManagement
             get => (int)GetValue(BorderWidthProperty);
             set => SetValue(BorderWidthProperty, 2);
         }
+
         public static readonly BindableProperty CornerRadiusProperty =
         BindableProperty.Create(nameof(CornerRadius),
             typeof(double), typeof(CustomEntry), Device.OnPlatform<double>(6, 7, 7));
@@ -35,6 +36,7 @@ namespace HospitalManagement
             get => (double)GetValue(CornerRadiusProperty);
             set => SetValue(CornerRadiusProperty, 0);
         }
+
         public static readonly BindableProperty IsCurvedCornersEnabledProperty =
         BindableProperty.Create(nameof(IsCurvedCornersEnabled),
             typeof(bool), typeof(CustomEntry), true);

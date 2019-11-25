@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             x:Class="HospitalManagement.Views.TreatmentDetailPage"            
             xmlns:controls="clr-namespace:HospitalManagement.Control"
             xmlns:custom="clr-namespace:HospitalManagement"
             x:Name="TreatmentDetailView" Title="Treatment Detail">
-=======
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HospitalManagement.Views.TreatmentDetailPage"
-            x:Name="TreatmentDetailView" Title="Treatment Detail"
-            xmlns:customViews="clr-namespace:HospitalManagement">
->>>>>>> 7083799... merged with master
     <!--Pages can be added as references or inline-->    
     <ContentPage Title="Info" x:Name="PatientInfoBlock">
         <ScrollView>
@@ -27,11 +21,7 @@
                 <Label Text="Treatment Plan"/>
                 <controls:ExtendedEditor x:Name="TreatmentPlan"/>
 
-<<<<<<< HEAD
                 <custom:CustomEntry Placeholder="Cost" x:Name="TreatmentCost"/>
-=======
-                <customViews:CustomEntry Placeholder="Cost" x:Name="TreatmentCost"/>
->>>>>>> 7083799... merged with master
 
                 <Button Text="Save" Clicked="Save"/>
             </StackLayout>
