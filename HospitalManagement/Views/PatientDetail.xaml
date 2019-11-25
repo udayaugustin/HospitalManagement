@@ -22,15 +22,15 @@
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
 
-        <Label Text="Name" Grid.Row="0" Grid.Column="0" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
+            <Label Text="Name" Grid.Row="0" Grid.Column="0" FontAttributes="Bold" TextColor="#46A3ED" FontSize="18"/>
         <Label  x:Name="Name" Grid.Row="0" Grid.Column="1" FontSize="18"/>
-        <Label Text="Contact Number" Grid.Row="1" Grid.Column="0" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
+            <Label Text="Contact Number" Grid.Row="1" Grid.Column="0" FontAttributes="Bold" TextColor="#46A3ED" FontSize="18"/>
         <Label  x:Name="PhoneNo" Grid.Row="1" Grid.Column="1" FontSize="18"/>
-        <Label Text="Age" Grid.Row="2" Grid.Column="0" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
+            <Label Text="Age" Grid.Row="2" Grid.Column="0" FontAttributes="Bold" TextColor="#46A3ED" FontSize="18"/>
         <Label x:Name="Age" Grid.Row="2" Grid.Column="1"  FontSize="18"/>
-        <Label Text="Sex" Grid.Row="3" Grid.Column="0" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
+            <Label Text="Sex" Grid.Row="3" Grid.Column="0" FontAttributes="Bold" TextColor="#46A3ED" FontSize="18"/>
         <Label x:Name="Sex" Grid.Row="3" Grid.Column="1"  FontSize="18"/>
-        <Label Text="Address" Grid.Row="4" Grid.Column="0" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
+            <Label Text="Address" Grid.Row="4" Grid.Column="0" FontAttributes="Bold" TextColor="#46A3ED" FontSize="18"/>
         <Label x:Name="Address" Grid.Row="4" Grid.Column="1"  FontSize="18"/>
      </Grid>
         <StackLayout HorizontalOptions="FillAndExpand">

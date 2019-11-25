@@ -11,7 +11,7 @@ namespace HospitalManagement.Control
           = BindableProperty.Create(nameof(Placeholder), typeof(string), typeof(ExtendedEditor));
 
         public static BindableProperty PlaceholderColorProperty
-           = BindableProperty.Create(nameof(PlaceholderColor), typeof(Color), typeof(ExtendedEditor), Color.LightGray);
+           = BindableProperty.Create(nameof(PlaceholderColor), typeof(Color), typeof(ExtendedEditor), Color.Gray);
 
         public static BindableProperty HasRoundedCornerProperty
         = BindableProperty.Create(nameof(HasRoundedCorner), typeof(bool), typeof(ExtendedEditor), true);

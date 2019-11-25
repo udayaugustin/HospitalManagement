@@ -11,29 +11,29 @@
 
         <Style TargetType="Label">
             <Setter Property="FontFamily" Value="{StaticResource ProximaNovaRegular}"/>
-            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="TextColor" Value="#46A3ED"/>
         </Style>
         <Style TargetType="Label" x:Key="BalanceTag">
             <Setter Property="FontFamily" Value="{StaticResource ProximaNovaBold}"/>
-            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="TextColor" Value="#46A3ED"/>
         </Style>
 
         <Style TargetType="Entry">
             <Setter Property="FontFamily" Value="{StaticResource ProximaNovaRegular}"/>
-            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="TextColor" Value="#46A3ED"/>
         </Style>
 
         <Style TargetType="Button">
             <Setter Property="FontFamily" Value="{StaticResource ProximaNovaRegular}"/>
             <Setter Property="TextColor" Value="White"/>
-            <Setter Property="BackgroundColor" Value="#2E9AFE"/>
+            <Setter Property="BackgroundColor" Value="#46A3ED"/>
             <Setter Property="WidthRequest" Value="120"/>
             <Setter Property="HorizontalOptions" Value="EndAndExpand"/>
         </Style>
 
         <Style TargetType="DatePicker">
             <Setter Property="FontFamily" Value="{StaticResource ProximaNovaRegular}"/>
-            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="TextColor" Value="#46A3ED"/>
         </Style>
 
         <Style TargetType="Editor">
@@ -56,7 +56,7 @@
             <Setter Property="HorizontalOptions" Value="EndAndExpand"/>
            <Style.Triggers>
                <DataTrigger TargetType="Label" Binding="{Binding BalanceAmount}" Value="0">
-                   <Setter Property="TextColor" Value="Black"/>
+                    <Setter Property="TextColor" Value="#46A3ED"/>
                </DataTrigger>
            </Style.Triggers>
         </Style>

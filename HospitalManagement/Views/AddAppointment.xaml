@@ -9,10 +9,10 @@
     </NavigationPage.TitleView>
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" Padding="20">
-            <DatePicker x:Name="datepicker" />
-            <TimePicker x:Name="timepicker"/>
-            <controls:ExtendedEditor  Placeholder="Treatment Plan" x:Name="treatmentplan"  />
-            <controls:ExtendedEditor Placeholder="Treatment Done" x:Name="treatmentdone" />
+            <DatePicker TextColor="#46A3ED" x:Name="datepicker" />
+            <TimePicker TextColor="#46A3ED" x:Name="timepicker"/>
+            <controls:ExtendedEditor TextColor="#46A3ED" Placeholder="Treatment Plan" x:Name="treatmentplan"  />
+            <controls:ExtendedEditor TextColor="#46A3ED" Placeholder="Treatment Done" x:Name="treatmentdone" />
             <Button Text="Create"  Clicked="Save"/>
         </StackLayout>
     </ContentPage.Content>

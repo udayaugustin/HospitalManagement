@@ -3,9 +3,9 @@
              xmlns:custom="clr-namespace:HospitalManagement" x:Class="HospitalManagement.Views.AddPatient" Title="Personal Info">
     <ContentPage.Content>
         <StackLayout Padding="20">
-            <custom:CustomEntry Placeholder="Name" Keyboard="Text" x:Name="Name"/>
-            <custom:CustomEntry  Placeholder="Age" Keyboard="Numeric" x:Name="Age"/>
-            <Picker x:Name="Sex" Title="Sex">
+            <custom:CustomEntry TextColor="#46A3ED" Placeholder="Name" Keyboard="Text" x:Name="Name"/>
+            <custom:CustomEntry TextColor="#46A3ED" Placeholder="Age" Keyboard="Numeric" x:Name="Age"/>
+            <Picker x:Name="Sex" Title="Gender" TextColor="#46A3ED" TitleColor="#46A3ED">
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
                     <x:String>Male</x:String>
@@ -14,8 +14,8 @@
                     </x:Array>
                 </Picker.ItemsSource>
             </Picker>
-            <custom:CustomEntry  Placeholder="Mobile No" Keyboard="Numeric" x:Name="MobileNo"/>
-            <custom:CustomEntry  Placeholder="Address"  x:Name="Address"/>
+            <custom:CustomEntry TextColor="#46A3ED" Placeholder="Mobile No" Keyboard="Numeric" x:Name="MobileNo"/>
+            <custom:CustomEntry TextColor="#46A3ED" Placeholder="Address"  x:Name="Address"/>
             <Button Text="Save" Clicked="Save"/>
         </StackLayout>
     </ContentPage.Content>
