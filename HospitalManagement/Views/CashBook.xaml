@@ -6,46 +6,46 @@
             <StackLayout Orientation="Vertical">
                 <StackLayout Orientation="Horizontal">
                     <DatePicker/>
-                    <Picker Title="Choose Patient" SelectedIndexChanged="PatientSelector_SelectedIndexChanged" x:Name="PatientListPicker" HorizontalOptions="EndAndExpand"/>
+                    <Picker Title="Choose Patient" SelectedIndexChanged="PatientSelector_SelectedIndexChanged" x:Name="PatientListPicker" HorizontalOptions="EndAndExpand"/>                    
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <custom:CustomEntry Placeholder="Amount" x:Name="PaidAmount" WidthRequest="100"/>
                     <Button Text="Submit" Clicked="AddPayment" HorizontalOptions="EndAndExpand"/>
-                </StackLayout>
+                </StackLayout>                
 
                 <StackLayout Orientation="Horizontal" Margin="0,10">
                     <Label FontSize="16" x:Name="TransactionTitle"/>
                     <Label x:Name="TotalIncome" HorizontalOptions="EndAndExpand"/>
                 </StackLayout>
-
+                
                 <Grid BackgroundColor="#50B1FF" Padding="5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>                        
                     </Grid.ColumnDefinitions>
                     <Label Text="Date" TextColor="White" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" FontAttributes="Bold" Grid.Column="0"/>
                     <Label Text="Name" TextColor="White" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="1"/>
-                    <Label Text="Amount" TextColor="White" VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontAttributes="Bold" Grid.Column="2"/>
+                    <Label Text="Amount" TextColor="White" VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontAttributes="Bold" Grid.Column="2"/>                    
                 </Grid>
                 <ListView x:Name="patientTransctionListView" SeparatorColor="#AFDCFF" HasUnevenRows="True">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <Grid Padding="5">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Label Text="{Binding Date, StringFormat='{0:dd-MMM-yy}'}" VerticalTextAlignment="Start" HorizontalTextAlignment="Start"  Grid.Column="0"/>
-                                    <Label Text="{Binding PatientName}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"  Grid.Column="1"/>
-                                    <Label Text="{Binding PaidAmount}" VerticalTextAlignment="Center" HorizontalTextAlignment="End" Grid.Column="2"/>
-                                </Grid>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>                                    
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Date, StringFormat='{0:dd-MMM-yy}'}" VerticalTextAlignment="Start" HorizontalTextAlignment="Start"  Grid.Column="0"/>
+                                <Label Text="{Binding PatientName}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"  Grid.Column="1"/>                                                                
+                                <Label Text="{Binding PaidAmount}" VerticalTextAlignment="Center" HorizontalTextAlignment="End" Grid.Column="2"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
             </StackLayout>
         </ScrollView>
     </StackLayout>
