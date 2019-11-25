@@ -5,16 +5,19 @@ using HospitalManagement.Model;
 using SQLite;
 using Xamarin.Forms;
 using System.Linq;
+using System.Collections.ObjectModel;
 
 namespace HospitalManagement.Views
 {
-    public partial class CashBook : ContentPage
+    public partial class CashBook : TabbedPage
     {
         private List<Patient> patientList;
         private SQLiteAsyncConnection connection;
         private Patient _selectedPatient;
-        private List<PatientTransaction> patientTransactionList;
+        private ObservableCollection<PatientTransaction> patientTransactionList;
+        private ObservableCollection<ExpenseTransaction> expenseTransactionList;
         private int totalIncome;
+        private int totalExpense;
         private DateTime startDate;
 
         public CashBook()
@@ -22,51 +25,86 @@ namespace HospitalManagement.Views
             InitializeComponent();
             connection = DependencyService.Get<ISQLiteDb>().GetConnection();
             startDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
-            TransactionTitle.Text = "Date: " + startDate.Date.ToString("dd-MMM-yy") + " To " + DateTime.Today.Date.ToString("dd-MMM-yy");
+            ExpenseTransactionTitle.Text = ReceivedTransactionTitle.Text = "Date: " + startDate.Date.ToString("dd-MMM-yy") + " To " + DateTime.Today.Date.ToString("dd-MMM-yy");
 
-            GetData();
+            GetPatientList();
+            GetPatientTransactionList();
+            GetExpenseTransactionList();
         }
 
-        private async Task GetData()
+        private async Task GetPatientList()
         {
             patientList = new List<Patient>();
             patientList = await connection.Table<Patient>().ToListAsync();
             PatientListPicker.ItemsSource = patientList;
-            PatientListPicker.ItemDisplayBinding = new Binding("Name");
+            PatientListPicker.ItemDisplayBinding = new Binding("Name");                                   
+        }
 
-            patientTransactionList = new List<PatientTransaction>();
-            patientTransactionList  = await connection.Table<PatientTransaction>()
+        private async Task GetPatientTransactionList()
+        {
+            patientTransactionList = new ObservableCollection<PatientTransaction>(await connection.Table<PatientTransaction>()
                 .Where(p => p.Date >= startDate && p.Date <= DateTime.Today.Date)
-                .OrderByDescending(p =>p.Id)
-                .ToListAsync();
+                .OrderByDescending(p => p.Id)
+                .ToListAsync());
             patientTransctionListView.ItemsSource = null;
             patientTransctionListView.ItemsSource = patientTransactionList;
 
-            totalIncome = patientTransactionList.Sum(p => p.PaidAmount);
-            
+            totalIncome = patientTransactionList.Sum(p => p.ReceivedAmount);
             TotalIncome.Text = "Total Income Rs." + totalIncome;
         }
 
-        private void AddPayment(object sender, EventArgs e)
+        private async Task GetExpenseTransactionList()
+        {
+            expenseTransactionList = new ObservableCollection<ExpenseTransaction>(
+                await connection.Table<ExpenseTransaction>()
+                .Where(p => p.Date >= startDate && p.Date <= DateTime.Today.Date)
+                .OrderByDescending(p => p.Id)
+                .ToListAsync());
+            expenseTransctionListView.ItemsSource = null;
+            expenseTransctionListView.ItemsSource = expenseTransactionList;
+
+            totalExpense = expenseTransactionList.Sum(e => e.PaidAmount);
+            TotalExpense.Text = "Total Expense Rs." + totalExpense;
+        }
+
+        private void UpdateReceivedAmount(object sender, EventArgs e)
         {
             var patientTransaction = new PatientTransaction
             {
                 PatientId = _selectedPatient.Id,
                 PatientName = _selectedPatient.Name,
-                Date = DateTime.Now.Date,
-                PaidAmount = Convert.ToInt32(PaidAmount.Text),
+                Date = ReceivedDate.Date,
+                ReceivedAmount = Convert.ToInt32(ReceivedAmount.Text),
             };
 
             connection.InsertAsync(patientTransaction);
 
+            patientTransactionList.Add(patientTransaction);
+
             PatientListPicker.SelectedItem = null;
-            PaidAmount.Text = "";
+            ReceivedAmount.Text = "";
         }
 
         private void PatientSelector_SelectedIndexChanged(object sender, EventArgs e)
         {
             var picker = (Picker)sender;
             _selectedPatient = (Patient)picker.SelectedItem;
+        }
+
+        private void UpdatePaidAmount(object sender, EventArgs e)
+        {
+            var expenseTransaction = new ExpenseTransaction
+            {
+                Date = PaidDate.Date,
+                Name = Name.Text,
+                PaidAmount = Convert.ToInt32(PaidAmount.Text)
+            };
+
+            connection.InsertAsync(expenseTransaction);
+            expenseTransactionList.Add(expenseTransaction);
+
+            Name.Text = "";
+            PaidAmount.Text = "";
         }
     }
 }

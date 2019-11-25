@@ -29,6 +29,7 @@ namespace HospitalManagement
             connection.CreateTableAsync<Appoinment>();
             connection.CreateTableAsync<PatientPaymentOverview>();
             connection.CreateTableAsync<PatientTransaction>();
+            connection.CreateTableAsync<ExpenseTransaction>();
         }
 
         protected override void OnSleep()

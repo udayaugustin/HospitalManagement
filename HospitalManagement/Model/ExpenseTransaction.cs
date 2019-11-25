@@ -3,17 +3,15 @@ using SQLite;
 
 namespace HospitalManagement.Model
 {
-    public class PatientTransaction
+    public class ExpenseTransaction
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
 
         public DateTime Date { get; set; }
 
-        public int PatientId { get; set; }
+        public string Name { get; set; }        
 
-        public string PatientName { get; set; }
-
-        public int  ReceivedAmount { get; set; }
+        public int PaidAmount { get; set; }
     }
 }
