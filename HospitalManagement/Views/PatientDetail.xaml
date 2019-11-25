@@ -34,7 +34,10 @@
         <Label x:Name="Address" Grid.Row="4" Grid.Column="1"  FontSize="18"/>
      </Grid>
         <StackLayout HorizontalOptions="FillAndExpand">
-            <Label Text="Treatment List" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HeightRequest="35" FontSize="22" HorizontalOptions="FillAndExpand" BackgroundColor="Gray" TextColor="White"/>
+                 <StackLayout HorizontalOptions="StartAndExpand"  Orientation="Horizontal">
+                    <Label Text="Treatment List" TextColor="#1976D3"  HeightRequest="35" FontSize="22" HorizontalOptions="FillAndExpand"/>
+                    <Image Source="sortdown.png" VerticalOptions="Center" />
+                </StackLayout>
             <ListView x:Name="treatmentlist" HasUnevenRows="True" ItemSelected="Treatmentlist_ItemSelected" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
