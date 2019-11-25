@@ -49,7 +49,7 @@ namespace HospitalManagement.Views
                     break;
 
                 case "Report":
-                    mainPage.Detail = new NavigationPage(new MainPage());
+                    mainPage.Detail = new NavigationPage(new ReportPage());
                     break;
 
                 case "Signout":

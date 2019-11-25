@@ -10,6 +10,8 @@ namespace HospitalManagement.Model
         [AutoIncrement,PrimaryKey]
         public int Id { get; set; }
 
+        public DateTime TreatmentDate { get; set; }
+
         public int PatientId { get; set; }
 
         public string Cheif_Complaint { get; set; }

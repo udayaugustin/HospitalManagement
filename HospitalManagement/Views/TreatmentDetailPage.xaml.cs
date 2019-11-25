@@ -75,7 +75,11 @@ namespace HospitalManagement.Views
             treatment.TreatmentPlan = treatmentplan;
             treatment.PatientId = patientId;
             treatment.TreatmentCost = Convert.ToInt32(treatmentCost);
-            
+            if(treatment.TreatmentDate == DateTime.MinValue)
+            {
+                treatment.TreatmentDate = DateTime.Now.Date;
+            }
+                        
             var result = await connection.InsertAsync(treatment);
             treatmentId = result;
         }
