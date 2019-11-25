@@ -42,8 +42,14 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Padding="10" VerticalOptions="Center">
-                                <Label FontSize="20" VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="{Binding Cheif_Complaint}"  />
+                            <StackLayout Orientation="Horizontal" Padding="10">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="appoinment.png"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Vertical">
+                                    <Label FontSize="18" Text="{Binding Id, StringFormat='Treatment: {0}'}"/>
+                                    <Label FontSize="15" Text="{Binding Date, StringFormat='{0:dd/mm/yy}'}"/>
+                                </StackLayout>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
