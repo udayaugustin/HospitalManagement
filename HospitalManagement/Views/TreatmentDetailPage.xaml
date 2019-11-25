@@ -30,7 +30,7 @@
 
     <ContentPage Title="Appointment">
         <ContentPage.ToolbarItems>
-            <ToolbarItem Text="New" Order="Primary" Clicked="OpenAddAppointmentPage" />
+            <ToolbarItem IconImageSource="add.png" Order="Primary" Clicked="OpenAddAppointmentPage" />
         </ContentPage.ToolbarItems>
         <StackLayout Padding="20" BackgroundColor="#00000029">
             <ListView  ItemsSource="{Binding appoinmentList, Mode=TwoWay}" HasUnevenRows="True" SeparatorVisibility="None" x:Name="listView">
