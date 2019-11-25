@@ -25,18 +25,10 @@ namespace HospitalManagement.Views
         {
             var menuList = new List<MenuItem>
             {
-<<<<<<< HEAD
-               
                 new MenuItem{ Title = "Patient List", Image = "component.png"},
-                new MenuItem{ Title = "Report", Image = "todo.png"},
                 new MenuItem{ Title = "Cashbook", Image = "money.png" },
+                new MenuItem{ Title = "Report", Image = "todo.png"},
                 new MenuItem{ Title= "Signout", Image = "signout.png"}
-=======
-                new MenuItem{ Title = "Patient"},
-                new MenuItem{ Title = "Patient List"},
-                new MenuItem{ Title = "Cash Book"},
-                new MenuItem{ Title = "Report"},                            
->>>>>>> db23188... Cashbook page added
             };
 
             listView.ItemsSource = menuList;
