@@ -2,8 +2,25 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HospitalManagement.Views.CashBook">
     <StackLayout>
         <ScrollView>
-            <StackLayout>
+            <StackLayout Orientation="Vertical">
+                <StackLayout Orientation="Horizontal">
+                    <DatePicker/>
+                    <Entry Placeholder="Patient"/>
+                    <Entry Placeholder="Amount"/>
+                </StackLayout>
+                <Button Text="Submit" HorizontalOptions="End"/>
 
+                <Label FontSize="16" x:Name="TransactionTitle"/>
+                <Grid BackgroundColor="LightGray" Padding="5,10" HeightRequest="100">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Patient Name" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="0"/>
+                    <Label Text="Paid Amount" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="1"/>
+                    <Label Text="Balance" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="2"/>
+                </Grid>
             </StackLayout>
         </ScrollView>
     </StackLayout>
