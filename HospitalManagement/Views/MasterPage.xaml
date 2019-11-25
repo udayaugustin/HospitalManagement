@@ -5,10 +5,10 @@
         <ToolbarItem IconImageSource="sync.png" Clicked="Synch" Order="Primary"/>
     </MasterDetailPage.ToolbarItems>
     <MasterDetailPage.Master>
-        <ContentPage Title="Panel"  Padding="0">
+        <ContentPage Title="Panel">
             <StackLayout>
-              <StackLayout HorizontalOptions="Fill"  Padding="10">
-                    <Image Source="menubg.png"/>
+                <StackLayout HorizontalOptions="FillAndExpand" Padding="30" BackgroundColor="#359DF0" VerticalOptions="FillAndExpand">
+                    <Image Source="logo.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
               </StackLayout>
               
               <ListView x:Name="listView" HasUnevenRows="True" ItemTapped="ListView_ItemTapped">

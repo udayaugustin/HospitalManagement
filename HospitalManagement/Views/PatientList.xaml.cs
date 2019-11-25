@@ -80,5 +80,10 @@ namespace HospitalManagement.Views
 
             await Navigation.PushAsync(new PatientDetail(patient));
         }
+
+        private async void New_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddPatient());
+        }
     }
 }
