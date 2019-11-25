@@ -39,7 +39,9 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Label Text="{Binding Cheif_Complaint}"  />
+                            <StackLayout Padding="10" VerticalOptions="Center">
+                            <Label FontSize="20" VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="{Binding Cheif_Complaint}"  />
+                            </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
