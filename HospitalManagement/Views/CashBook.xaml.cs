@@ -19,7 +19,6 @@ namespace HospitalManagement.Views
         private int totalIncome;
         private int totalExpense;
         private DateTime startDate;
-
         public CashBook()
         {
             InitializeComponent();
@@ -40,6 +39,49 @@ namespace HospitalManagement.Views
             PatientListPicker.ItemDisplayBinding = new Binding("Name");                                   
         }
 
+        private async void UpdateReceivedAmount(object sender, EventArgs e)
+        {
+            var patientTransaction = new PatientTransaction
+            {
+                PatientId = _selectedPatient.Id,
+                PatientName = _selectedPatient.Name,
+                Date = ReceivedDate.Date,
+                ReceivedAmount = Convert.ToInt32(ReceivedAmount.Text),
+            };
+            await connection.InsertAsync(patientTransaction);
+
+            patientTransactionList.Insert(0, patientTransaction);
+            totalIncome += Convert.ToInt32(ReceivedAmount.Text);
+            UpdateTotalIncomeLabel();
+
+            PatientListPicker.SelectedItem = null;
+            ReceivedAmount.Text = "";
+        }
+
+        private void PatientSelector_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var picker = (Picker)sender;
+            _selectedPatient = (Patient)picker.SelectedItem;
+        }
+
+        private async void UpdatePaidAmount(object sender, EventArgs e)
+        {
+            var expenseTransaction = new ExpenseTransaction
+            {
+                Date = PaidDate.Date,
+                Name = Name.Text,
+                PaidAmount = Convert.ToInt32(PaidAmount.Text)
+            };
+            
+            await connection.InsertAsync(expenseTransaction);
+            expenseTransactionList.Insert(0, expenseTransaction);
+
+            totalExpense += Convert.ToInt32(PaidAmount.Text);
+
+            Name.Text = "";
+            PaidAmount.Text = "";
+            GetExpenseTransactionList();
+        }
         private async Task GetPatientTransactionList()
         {
             patientTransactionList = new ObservableCollection<PatientTransaction>(await connection.Table<PatientTransaction>()
@@ -50,7 +92,7 @@ namespace HospitalManagement.Views
             patientTransctionListView.ItemsSource = patientTransactionList;
 
             totalIncome = patientTransactionList.Sum(p => p.ReceivedAmount);
-            TotalIncome.Text = "Total Income Rs." + totalIncome;
+            UpdateTotalIncomeLabel();
         }
 
         private async Task GetExpenseTransactionList()
@@ -64,47 +106,17 @@ namespace HospitalManagement.Views
             expenseTransctionListView.ItemsSource = expenseTransactionList;
 
             totalExpense = expenseTransactionList.Sum(e => e.PaidAmount);
+            UpdateTotalExpanseLabel();
+        }
+
+        private void UpdateTotalIncomeLabel()
+        {
+            TotalIncome.Text = "Total Income Rs." + totalIncome;
+        }
+        
+        private void UpdateTotalExpanseLabel()
+        {
             TotalExpense.Text = "Total Expense Rs." + totalExpense;
-        }
-
-        private void UpdateReceivedAmount(object sender, EventArgs e)
-        {
-            var patientTransaction = new PatientTransaction
-            {
-                PatientId = _selectedPatient.Id,
-                PatientName = _selectedPatient.Name,
-                Date = ReceivedDate.Date,
-                ReceivedAmount = Convert.ToInt32(ReceivedAmount.Text),
-            };
-
-            connection.InsertAsync(patientTransaction);
-
-            patientTransactionList.Add(patientTransaction);
-
-            PatientListPicker.SelectedItem = null;
-            ReceivedAmount.Text = "";
-        }
-
-        private void PatientSelector_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var picker = (Picker)sender;
-            _selectedPatient = (Patient)picker.SelectedItem;
-        }
-
-        private void UpdatePaidAmount(object sender, EventArgs e)
-        {
-            var expenseTransaction = new ExpenseTransaction
-            {
-                Date = PaidDate.Date,
-                Name = Name.Text,
-                PaidAmount = Convert.ToInt32(PaidAmount.Text)
-            };
-
-            connection.InsertAsync(expenseTransaction);
-            expenseTransactionList.Add(expenseTransaction);
-
-            Name.Text = "";
-            PaidAmount.Text = "";
         }
     }
 }
