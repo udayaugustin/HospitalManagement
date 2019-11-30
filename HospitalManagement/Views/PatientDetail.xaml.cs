@@ -31,8 +31,7 @@ namespace HospitalManagement.Views
             PhoneNo.Text = patient.MobileNo;
             Age.Text = Convert.ToString(patient.Age);
             Sex.Text = patient.Sex;
-            Address.Text = patient.Address;
-
+            Address.Text = patient.Address;            
             TreatmentList = new List<Treatment>();
             TreatmentList = await connection.Table<Treatment>().Where(t => t.PatientId == patient.Id).ToListAsync();
             treatmentlist.ItemsSource = TreatmentList;

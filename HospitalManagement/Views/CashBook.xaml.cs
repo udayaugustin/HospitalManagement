@@ -70,6 +70,7 @@ namespace HospitalManagement.Views
             {
                 Date = PaidDate.Date,
                 Name = Name.Text,
+                Type = Convert.ToString(type.SelectedItem),
                 PaidAmount = Convert.ToInt32(PaidAmount.Text)
             };
             

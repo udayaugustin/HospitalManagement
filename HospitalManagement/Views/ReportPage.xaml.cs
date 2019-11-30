@@ -17,7 +17,7 @@ namespace HospitalManagement.Views
         private List<ExpenseTransaction> expenseReportList;
         private int totalExpense;
 
-        public ReportPage()
+        public  ReportPage()
         {
             InitializeComponent();
 

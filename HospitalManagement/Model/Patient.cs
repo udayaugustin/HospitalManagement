@@ -20,5 +20,7 @@ namespace HospitalManagement.Model
 
         public string Address { get; set; }
 
+       
+
     }
 }

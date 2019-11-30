@@ -54,7 +54,7 @@
             <StackLayout Orientation="Horizontal">
                 <DatePicker x:Name="ExpenseFromDate" TextColor="#46A3ED"/>
                 <Label Text="To" VerticalTextAlignment="Center"/>
-                <DatePicker x:Name="ExpenseToDate" TextColor="#46A3ED"/>                
+                <DatePicker x:Name="ExpenseToDate" TextColor="#46A3ED"/>
             </StackLayout>
             <Button Text="Submit" Clicked="GenerateExpenseReport"/>
             <Label x:Name="TotalExpense" HorizontalOptions="EndAndExpand"/>
@@ -68,7 +68,7 @@
                         <ColumnDefinition Width="*"/>                        
                     </Grid.ColumnDefinitions>
                     <Label Text="Date" TextColor="White" FontSize="18" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" FontAttributes="Bold" Grid.Column="0" Grid.Row="0"/>
-                    <Label Text="Name" TextColor="White"  FontSize="18" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="1" Grid.Row="0"/>
+                    <Label Text="Name/Type" TextColor="White"  FontSize="18" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="1" Grid.Row="0"/>
                     <Label Text="Amount"  TextColor="White"  FontSize="18"  VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontAttributes="Bold" Grid.Column="2" Grid.Row="0"/>                    
                 </Grid>
                 <ListView x:Name="expenseTransctionListView" SeparatorColor="#AFDCFF" HasUnevenRows="True">
@@ -76,14 +76,19 @@
                     <DataTemplate>
                         <ViewCell>
                             <Grid Padding="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>                                    
                                 </Grid.ColumnDefinitions>
-                                <Label Text="{Binding Date, StringFormat='{0:dd-MMM-yy}'}" FontSize="16" VerticalTextAlignment="Start" HorizontalTextAlignment="Start"  Grid.Column="0"/>
-                                <Label Text="{Binding Name}" VerticalTextAlignment="Center" FontSize="16" HorizontalTextAlignment="Center"  Grid.Column="1"/>                                                                
-                                <Label Text="{Binding PaidAmount}" VerticalTextAlignment="Center" FontSize="16" HorizontalTextAlignment="End" Grid.Column="2"/>
+                                <Label Text="{Binding Date, StringFormat='{0:dd-MMM-yy}'}" Grid.RowSpan="2" FontSize="16" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"  Grid.Column="0"/>
+                                <Label Text="{Binding Name}" VerticalTextAlignment="Center" FontSize="16" HorizontalTextAlignment="Center" Grid.Row="0"  Grid.Column="1"/>
+                                <Label Text="{Binding Type}" VerticalTextAlignment="Center" FontSize="16" HorizontalTextAlignment="Center" Grid.Row="1"  Grid.Column="1"/>                                                                
+                                <Label Text="{Binding PaidAmount}" VerticalTextAlignment="Center" FontSize="16" Grid.RowSpan="2" HorizontalTextAlignment="End" Grid.Column="2"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

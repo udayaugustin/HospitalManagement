@@ -12,6 +12,8 @@ namespace HospitalManagement.Model
 
         public DateTime TreatmentDate { get; set; }
 
+        public int TreatmentNo { get; set; }
+
         public int PatientId { get; set; }
 
         public string Cheif_Complaint { get; set; }

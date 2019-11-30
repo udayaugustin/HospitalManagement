@@ -15,7 +15,9 @@ namespace HospitalManagement.Views
         private int  patientId;
         private Treatment treatment;
         private int treatmentId;
-        private ObservableCollection<Appoinment> appoinmentList;        
+        private Patient patient;
+        private ObservableCollection<Appoinment> appoinmentList;  
+        
 
         public TreatmentDetailPage(int Id, Treatment treatment)
         {
@@ -79,9 +81,18 @@ namespace HospitalManagement.Views
             {
                 treatment.TreatmentDate = DateTime.Now.Date;
             }
-                        
+            if (treatment.TreatmentNo == 0)
+            {
+                treatment.TreatmentNo = 1;
+            }
+            else
+            {
+                treatment.TreatmentNo = treatment.TreatmentNo + 1;
+            }
             var result = await connection.InsertAsync(treatment);
             treatmentId = result;
+
+
         }
 
         private void OpenAddAppointmentPage(object sender, EventArgs e)

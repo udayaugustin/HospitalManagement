@@ -47,7 +47,7 @@
                                     <Image Source="appoinment.png"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Vertical">
-                                    <Label FontSize="18" Text="{Binding Id, StringFormat='Treatment: {0}'}"/>
+                                    <Label FontSize="18" Text="{Binding TreatmentNo, StringFormat='Treatment: {0}'}"/>
                                     <Label FontSize="15" Text="{Binding Date, StringFormat='{0:dd/mm/yy}'}"/>
                                 </StackLayout>
                             </StackLayout>

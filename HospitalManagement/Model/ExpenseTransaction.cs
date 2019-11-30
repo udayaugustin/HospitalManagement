@@ -13,5 +13,7 @@ namespace HospitalManagement.Model
         public string Name { get; set; }        
 
         public int PaidAmount { get; set; }
+
+        public string Type { get; set; }
     }
 }

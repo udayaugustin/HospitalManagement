@@ -56,6 +56,16 @@
                 <StackLayout Orientation="Vertical">
                     <StackLayout Orientation="Vertical">
                         <DatePicker x:Name="PaidDate" TextColor="#46A3ED"/>
+                        <Picker x:Name="type" Title="Type" TextColor="#46A3ED" TitleColor="#46A3ED">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Materials</x:String>
+                                    <x:String>Medicines</x:String>
+                                    <x:String>Rent</x:String>
+                                    <x:String>Electrycity</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
                         <custom:CustomEntry TextColor="#46A3ED" Placeholder="Name" x:Name="Name"/>
                         <custom:CustomEntry TextColor="#46A3ED" Placeholder="Amount" Keyboard="Numeric" x:Name="PaidAmount"/>
                         <Button Text="Pay" Clicked="UpdatePaidAmount"/>
@@ -76,7 +86,7 @@
                         <ColumnDefinition Width="*"/>                        
                     </Grid.ColumnDefinitions>
                     <Label Text="Date" TextColor="White" FontSize="18" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" FontAttributes="Bold" Grid.Column="0" Grid.Row="0"/>
-                    <Label Text="Name" TextColor="White"  FontSize="18" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="1" Grid.Row="0"/>
+                    <Label Text="Name/Type" TextColor="White"  FontSize="18" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="1" Grid.Row="0"/>
                     <Label Text="Amount"  TextColor="White"  FontSize="18"  VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontAttributes="Bold" Grid.Column="2" Grid.Row="0"/>                    
                 </Grid>
                 <ListView x:Name="expenseTransctionListView" SeparatorColor="#AFDCFF" HasUnevenRows="True">
@@ -86,15 +96,17 @@
                             <Grid Padding="10">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
                                         </Grid.RowDefinitions>
                                         <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>                                    
                                 </Grid.ColumnDefinitions>
-                                <Label Text="{Binding Date, StringFormat='{0:dd-MMM-yy}'}" FontSize="16" VerticalTextAlignment="Start" HorizontalTextAlignment="Start" Grid.Row="0"  Grid.Column="0"/>
-                                <Label Text="{Binding Name}" VerticalTextAlignment="Center" FontSize="16" HorizontalTextAlignment="Center"  Grid.Column="1" Grid.Row="0"/>                                                                
-                                <Label Text="{Binding PaidAmount}" VerticalTextAlignment="Center" FontSize="16" HorizontalTextAlignment="End" Grid.Column="2" Grid.Row="0"/>
+                                <Label Text="{Binding Date, StringFormat='{0:dd-MMM-yy}'}" Grid.RowSpan="2" FontSize="16" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"  Grid.Column="0"/>
+                                <Label Text="{Binding Name}" VerticalTextAlignment="Center" FontSize="16" HorizontalTextAlignment="Center"  Grid.Column="1" Grid.Row="0"/>
+                                <Label Text="{Binding Type}" VerticalTextAlignment="Center" FontSize="16" HorizontalTextAlignment="Center"  Grid.Column="1" Grid.Row="1"/>
+                                <Label Text="{Binding PaidAmount}" Grid.RowSpan="2" VerticalTextAlignment="Center" FontSize="16" HorizontalTextAlignment="End" Grid.Column="2" />
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
