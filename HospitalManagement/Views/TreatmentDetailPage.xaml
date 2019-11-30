@@ -22,7 +22,6 @@
                 <controls:ExtendedEditor TextColor="#46A3ED" x:Name="TreatmentPlan"/>
                 <Label Text="Cost"/>
                 <custom:CustomEntry TextColor="#46A3ED" Keyboard="Numeric"  x:Name="TreatmentCost"/>
-
                 <Button Text="Save" Clicked="Save"/>
             </StackLayout>
         </ScrollView>
