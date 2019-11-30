@@ -34,6 +34,11 @@ namespace HospitalManagement.Views
             Address.Text = patient.Address;            
             TreatmentList = new List<Treatment>();
             TreatmentList = await connection.Table<Treatment>().Where(t => t.PatientId == patient.Id).ToListAsync();
+            foreach(var treatment in TreatmentList)
+            {
+                
+            }
+
             treatmentlist.ItemsSource = TreatmentList;
         }        
 

@@ -25,5 +25,7 @@ namespace HospitalManagement.Model
         public string TreatmentPlan {get; set;}
 
         public int TreatmentCost { get; set; }
+
+        public int SerialNo { get; set; }
     }
 }

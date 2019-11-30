@@ -78,10 +78,10 @@ namespace HospitalManagement.Views
             expenseTransactionList.Insert(0, expenseTransaction);
 
             totalExpense += Convert.ToInt32(PaidAmount.Text);
+            UpdateTotalExpanseLabel();
 
             Name.Text = "";
-            PaidAmount.Text = "";
-            GetExpenseTransactionList();
+            PaidAmount.Text = "";            
         }
         private async Task GetPatientTransactionList()
         {

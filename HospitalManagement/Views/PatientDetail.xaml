@@ -22,7 +22,7 @@
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
 
-            <Label Text="Name" Grid.Row="0" Grid.Column="0" FontAttributes="Bold" TextColor="#46A3ED" FontSize="18"/>
+        <Label Text="Name" Grid.Row="0" Grid.Column="0" FontAttributes="Bold" TextColor="#46A3ED" FontSize="18"/>
         <Label  x:Name="Name" Grid.Row="0" Grid.Column="1" FontSize="18"/>
             <Label Text="Contact Number" Grid.Row="1" Grid.Column="0" FontAttributes="Bold" TextColor="#46A3ED" FontSize="18"/>
         <Label  x:Name="PhoneNo" Grid.Row="1" Grid.Column="1" FontSize="18"/>
@@ -34,10 +34,10 @@
         <Label x:Name="Address" Grid.Row="4" Grid.Column="1"  FontSize="18"/>
      </Grid>
         <StackLayout HorizontalOptions="FillAndExpand">
-                 <StackLayout HorizontalOptions="StartAndExpand"  Orientation="Horizontal">
-                    <Label Text="Treatment List" TextColor="#1976D3"  HeightRequest="35" FontSize="22" HorizontalOptions="FillAndExpand"/>
-                    <Image Source="sortdown.png" VerticalOptions="Center" />
-                </StackLayout>
+            <StackLayout HorizontalOptions="StartAndExpand"  Orientation="Horizontal">
+                <Label Text="Treatment List" TextColor="#1976D3"  HeightRequest="35" FontSize="22" HorizontalOptions="FillAndExpand"/>
+                <Image Source="sortdown.png" VerticalOptions="Center" />
+            </StackLayout>
             <ListView x:Name="treatmentlist" HasUnevenRows="True" SeparatorColor="#1976D3" ItemSelected="Treatmentlist_ItemSelected" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
