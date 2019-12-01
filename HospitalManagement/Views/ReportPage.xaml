@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HospitalManagement.Views.ReportPage">
     <ContentPage Title="Income">
+        <ScrollView>
         <StackLayout Padding="10">
             <StackLayout Orientation="Horizontal">
                 <DatePicker x:Name="IncomeFromDate" TextColor="#46A3ED"/>
@@ -47,9 +48,11 @@
                 </ListView.ItemTemplate>
             </ListView>            
         </StackLayout>
+        </ScrollView>
     </ContentPage>
 
     <ContentPage Title="Expense">
+        <ScrollView>
         <StackLayout Padding="10">
             <StackLayout Orientation="Horizontal">
                 <DatePicker x:Name="ExpenseFromDate" TextColor="#46A3ED"/>
@@ -95,5 +98,6 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
+        </ScrollView>
     </ContentPage>
 </TabbedPage>

@@ -5,6 +5,7 @@
     <NavigationPage.TitleView>
         <Label Text="Patient Details" Style="{StaticResource NavigationTitle}"/>
     </NavigationPage.TitleView>
+    <ScrollView>
     <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
         <Grid Padding="10" RowSpacing="10">
         <Grid.RowDefinitions>
@@ -46,9 +47,12 @@
                                 <StackLayout Orientation="Horizontal">
                                     <Image Source="appoinment.png"/>
                                 </StackLayout>
-                                <StackLayout Orientation="Vertical">
-                                    <Label FontSize="18" Text="{Binding TreatmentNo, StringFormat='Treatment: {0}'}"/>
-                                    <Label FontSize="15" Text="{Binding Date, StringFormat='{0:dd/mm/yy}'}"/>
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout Orientation="Vertical">
+                                        <Label FontSize="18" Text="{Binding SerialNo, StringFormat='Treatment: {0}'}"/>
+                                        <Label FontSize="15" Text="{Binding TreatmentDate, StringFormat='{0:dd/mm/yy}'}"/>
+                                    </StackLayout>                                    
+                                    <Label FontSize="15" HorizontalOptions="EndAndExpand" Text="{Binding TreatmentCost, StringFormat='Cost : Rs.{0}'}"/>
                                 </StackLayout>
                             </StackLayout>
                         </ViewCell>
@@ -58,5 +62,5 @@
             <Button Text="New Treatment" Clicked="AddTreatment"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
         </StackLayout>
     </StackLayout>
-
+    </ScrollView>
 </ContentPage>

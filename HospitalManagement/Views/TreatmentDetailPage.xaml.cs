@@ -89,10 +89,18 @@ namespace HospitalManagement.Views
             {
                 treatment.TreatmentNo = treatment.TreatmentNo + 1;
             }
-            var result = await connection.InsertAsync(treatment);
-            treatmentId = result;
+            if(treatment.Id == 0)
+            {
+                var result = await connection.InsertAsync(treatment);
+                treatment.Id = treatmentId = result;
+            }
+            else
+            {
+                await connection.UpdateAsync(treatment);
+            }            
 
-
+            //Move to next tab
+            CurrentPage = Children[1];
         }
 
         private void OpenAddAppointmentPage(object sender, EventArgs e)

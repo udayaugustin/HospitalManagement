@@ -56,15 +56,7 @@
                 <StackLayout Orientation="Vertical">
                     <StackLayout Orientation="Vertical">
                         <DatePicker x:Name="PaidDate" TextColor="#46A3ED"/>
-                        <Picker x:Name="type" Title="Type" TextColor="#46A3ED" TitleColor="#46A3ED">
-                            <Picker.ItemsSource>
-                                <x:Array Type="{x:Type x:String}">
-                                    <x:String>Materials</x:String>
-                                    <x:String>Medicines</x:String>
-                                    <x:String>Rent</x:String>
-                                    <x:String>Electrycity</x:String>
-                                </x:Array>
-                            </Picker.ItemsSource>
+                        <Picker x:Name="type" Title="Type" TextColor="#46A3ED" TitleColor="#46A3ED">                            
                         </Picker>
                         <custom:CustomEntry TextColor="#46A3ED" Placeholder="Name" x:Name="Name"/>
                         <custom:CustomEntry TextColor="#46A3ED" Placeholder="Amount" Keyboard="Numeric" x:Name="PaidAmount"/>

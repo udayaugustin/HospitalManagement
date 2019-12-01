@@ -18,13 +18,6 @@ namespace HospitalManagement.Model
 
         public string MobileNo { get; set; }
 
-<<<<<<< HEAD
         public string Address { get; set; }
-
-       
-
-=======
-        public string Address { get; set; }        
->>>>>>> c5f36a7... Serila no added in treatment model
     }
 }

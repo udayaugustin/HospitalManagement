@@ -25,7 +25,8 @@ namespace HospitalManagement.Views
             connection = DependencyService.Get<ISQLiteDb>().GetConnection();
             startDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
             ExpenseTransactionTitle.Text = ReceivedTransactionTitle.Text = "Date: " + startDate.Date.ToString("dd-MMM-yy") + " To " + DateTime.Today.Date.ToString("dd-MMM-yy");
-
+            type.ItemsSource = ExpenseType.ExpenseTypeList();
+            
             GetPatientList();
             GetPatientTransactionList();
             GetExpenseTransactionList();
