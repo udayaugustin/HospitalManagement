@@ -109,42 +109,48 @@
                     <DatePicker x:Name="Reporttodate" TextColor="#46A3ED"/>
                 </StackLayout>
                 <Button Text="Submit" Clicked="Button_Clicked"/>
-                <Grid BackgroundColor="#50B1FF" Padding="10">
+                <StackLayout Orientation="Horizontal">
+                    <Label x:Name="TotalIncomereport" Style="{StaticResource FieldTitle}" HorizontalOptions="StartAndExpand"/>
+                    <Label x:Name="TotalExpancereport" Style="{StaticResource FieldTitle}" HorizontalOptions="EndAndExpand"/>
+                </StackLayout>
+                <Grid BackgroundColor="#50B1FF" Padding="10" x:Name="listtitle" IsVisible="False">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Expance Type" Style="{StaticResource FieldTitle}"  TextColor="White" FontSize="18" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" FontAttributes="Bold" Grid.Column="0" Grid.Row="0" />
+                    <Label Text="Amount" Style="{StaticResource FieldTitle}"  TextColor="White" FontSize="18" VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontAttributes="Bold" Grid.Column="1" Grid.Row="0"/>
+                </Grid>
+                <Grid Padding="10" x:Name="listvalue" IsVisible="False">
+                      <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                       <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Text="Date" Style="{StaticResource FieldTitle}"  TextColor="White" FontSize="18" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" FontAttributes="Bold" Grid.Column="0" Grid.Row="0" />
-                    <Label Text="Name" Style="{StaticResource FieldTitle}"  TextColor="White" FontSize="18" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="1" Grid.Row="0"/>
-                    <Label Text="Amount" Style="{StaticResource FieldTitle}"  TextColor="White" FontSize="18" VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontAttributes="Bold" Grid.Column="2" Grid.Row="0"/>
+                     <Label Text="Material" Style="{StaticResource Menu}" FontSize="18"  Grid.Column="0" Grid.Row="0" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"/>
+                    <Label x:Name="MaterialAmount" Style="{StaticResource Menu}" FontSize="18" Grid.Column="1" Grid.Row="0" HorizontalOptions="EndAndExpand"/>
+                    <Label Text="Medicines" Style="{StaticResource Menu}" FontSize="18"  Grid.Column="0" Grid.Row="1" VerticalTextAlignment="Center"  HorizontalOptions="StartAndExpand"/>
+                    <Label x:Name="MedicinesAmount" Style="{StaticResource Menu}" FontSize="18" Grid.Column="1" Grid.Row="1" HorizontalOptions="EndAndExpand"/>
+                    <Label Text="Rent" Style="{StaticResource Menu}" FontSize="18"  Grid.Column="0" Grid.Row="2" VerticalTextAlignment="Center"  HorizontalOptions="StartAndExpand"/>
+                    <Label x:Name="RentAmount" Style="{StaticResource Menu}" FontSize="18" Grid.Column="1" Grid.Row="2" HorizontalOptions="EndAndExpand"/>
+                    <Label Text="Electrycity" Style="{StaticResource Menu}" FontSize="18" Grid.Column="0" Grid.Row="3" VerticalTextAlignment="Center"  HorizontalOptions="StartAndExpand"/>
+                    <Label x:Name="ElectrycityAmount" Style="{StaticResource Menu}" FontSize="18" Grid.Column="1" Grid.Row="3" HorizontalOptions="EndAndExpand"/>
+                    <Label Text="Garbage" Style="{StaticResource Menu}" FontSize="18" Grid.Column="0" Grid.Row="4" VerticalTextAlignment="Center"  HorizontalOptions="StartAndExpand"/>
+                    <Label x:Name="Garbage" Style="{StaticResource Menu}" FontSize="18" Grid.Column="1" Grid.Row="4" HorizontalOptions="EndAndExpand"/>
+                    <Label Text="Others" Style="{StaticResource Menu}" FontSize="18" Grid.Column="0" Grid.Row="5" VerticalTextAlignment="Center"  HorizontalOptions="StartAndExpand"/>
+                    <Label x:Name="OthersAmount" Style="{StaticResource Menu}" FontSize="18" Grid.Column="1" Grid.Row="5" HorizontalOptions="EndAndExpand"/>
                 </Grid>
-                <ListView HasUnevenRows="True" SeparatorColor="#AFDCFF" x:Name="reportlist" >
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="*"/>
-                                        <RowDefinition Height="*"/>
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto"/>
-                                        <ColumnDefinition Width="Auto"/>
-                                        <ColumnDefinition Width="Auto"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Label Text="{Binding Date}" Style="{StaticResource Menu}" Grid.RowSpan="2" Grid.Column="0" VerticalTextAlignment="Center"/>
-                                    <Label Text="{Binding Name}" Style="{StaticResource Menu}" Grid.Column="1" Grid.Row="0"/>
-                                    <Label Text="{Binding Type}" Style="{StaticResource Menu}" Grid.Column="1" Grid.Row="1"/>
-                                    <Label Text="{Binding Amount}" Style="{StaticResource Menu}" Grid.Column="2" Grid.RowSpan="2"/>
-                                </Grid>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                            
             </StackLayout>
         </ScrollView>
     </ContentPage>

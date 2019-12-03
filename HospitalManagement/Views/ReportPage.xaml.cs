@@ -16,6 +16,7 @@ namespace HospitalManagement.Views
         private List<IncomeReportModel> incomeReportList;
         private List<ExpenseTransaction> expenseReportList;
         private int totalExpense;
+        
 
         public  ReportPage()
         {
@@ -75,7 +76,6 @@ namespace HospitalManagement.Views
         {
             fromDate = ExpenseFromDate.Date;
             toDate = ExpenseToDate.Date;
-
             expenseReportList = new List<ExpenseTransaction>(
                 await connection.Table<ExpenseTransaction>()
                 .Where(p => p.Date >= fromDate && p.Date <= toDate)
@@ -90,7 +90,8 @@ namespace HospitalManagement.Views
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-
+            listtitle.IsVisible = true;
+            listvalue.IsVisible = true;
             GetReport();
         }
 
@@ -98,6 +99,37 @@ namespace HospitalManagement.Views
         {
             fromDate = Reportfromdate.Date;
             toDate = Reporttodate.Date;
+            int materialtotal;
+            int medicinestotal;
+            int renttotal;
+            int electrycitytotal;
+            int garbagetotal;
+            int otherstotal;
+
+            TotalIncomereport.Text = "Total Revinue Rs." + TotalIncome;
+            expenseReportList = new List<ExpenseTransaction>(await connection.Table<ExpenseTransaction>().Where(p => p.Date >= fromDate && p.Date <= toDate).ToListAsync());
+            totalExpense = expenseReportList.Sum(p =>p.PaidAmount);
+            TotalExpancereport.Text = "Total Expense Rs." + totalExpense;
+            expenseReportList = await connection.Table<ExpenseTransaction>().Where(r => r.Date >= fromDate && r.Date <= toDate && r.Type == "Materials").ToListAsync();
+            materialtotal = expenseReportList.Sum(r => r.PaidAmount);
+            MaterialAmount.Text = Convert.ToString(materialtotal);
+            expenseReportList = await connection.Table<ExpenseTransaction>().Where(r => r.Date >= fromDate && r.Date <= toDate && r.Type == "Medicines").ToListAsync();
+            medicinestotal = expenseReportList.Sum(r => r.PaidAmount);
+            MedicinesAmount.Text = Convert.ToString(medicinestotal);
+            expenseReportList = await connection.Table<ExpenseTransaction>().Where(r => r.Date >= fromDate && r.Date <= toDate && r.Type == "Rent").ToListAsync();
+            renttotal = expenseReportList.Sum(r => r.PaidAmount);
+            RentAmount.Text = Convert.ToString(renttotal);
+            expenseReportList = await connection.Table<ExpenseTransaction>().Where(r => r.Date >= fromDate && r.Date <= toDate && r.Type == "Electrycity").ToListAsync();
+            electrycitytotal = expenseReportList.Sum(r => r.PaidAmount);
+            ElectrycityAmount.Text = Convert.ToString(electrycitytotal);
+            expenseReportList = await connection.Table<ExpenseTransaction>().Where(r => r.Date >= fromDate && r.Date <= toDate && r.Type == "Garbage").ToListAsync();
+            garbagetotal = expenseReportList.Sum(r => r.PaidAmount);
+            Garbage.Text = Convert.ToString(garbagetotal);
+            expenseReportList = await connection.Table<ExpenseTransaction>().Where(r => r.Date >= fromDate && r.Date <= toDate && r.Type == "Others").ToListAsync();
+            otherstotal = expenseReportList.Sum(r => r.PaidAmount);
+            OthersAmount.Text = Convert.ToString(otherstotal);
+
+            //   TotalIncomereport.Text = "Total Income Rs." + incomeReportList.Sum(i => i.ReceivedAmount);
 
         }
              
