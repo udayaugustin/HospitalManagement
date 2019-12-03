@@ -23,10 +23,10 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Label Text="{Binding Name}" FontSize="20"  Grid.Row="0" Grid.Column="0"/>
-            <Label Text="{Binding Age}" FontSize="18" Grid.Row="1" Grid.Column="0"/>
-            <Label Text="{Binding MobileNo}" FontSize="18" Grid.Row="0" Grid.Column="1" HorizontalOptions="EndAndExpand"/>
-            <Label Text="{Binding Sex}"  FontSize="20"   Grid.Row="1" Grid.Column="1" HorizontalOptions="EndAndExpand"/>
+            <Label Text="{Binding Name}" Style="{StaticResource Menu}" FontSize="20"  Grid.Row="0" Grid.Column="0"/>
+            <Label Text="{Binding Age}" Style="{StaticResource Menu}" FontSize="18" Grid.Row="1" Grid.Column="0"/>
+            <Label Text="{Binding MobileNo}" Style="{StaticResource Menu}" FontSize="18" Grid.Row="0" Grid.Column="1" HorizontalOptions="EndAndExpand"/>
+            <Label Text="{Binding Sex}" Style="{StaticResource Menu}"  FontSize="20"   Grid.Row="1" Grid.Column="1" HorizontalOptions="EndAndExpand"/>
 
         </Grid>
                     </ViewCell>

@@ -28,7 +28,6 @@ namespace HospitalManagement.Views
                 new MenuItem{ Title = "Patient List", Image = "component.png"},
                 new MenuItem{ Title = "Cash Book", Image = "money.png" },
                 new MenuItem{ Title = "Report", Image = "todo.png"},
-                new MenuItem{ Title= "Final Report", Image = "todo.png"},
                 new MenuItem{ Title= "Signout", Image = "signout.png"}
             };
 
@@ -51,9 +50,6 @@ namespace HospitalManagement.Views
 
                 case "Report":
                     mainPage.Detail = new NavigationPage(new ReportPage());
-                    break;
-                case "Final Report":
-                    mainPage.Detail = new NavigationPage(new FinalReport());
                     break;
 
                 case "Signout":

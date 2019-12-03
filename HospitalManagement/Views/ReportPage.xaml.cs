@@ -87,6 +87,20 @@ namespace HospitalManagement.Views
             totalExpense = expenseReportList.Sum(e => e.PaidAmount);
             TotalExpense.Text = "Total Expense Rs." + totalExpense;
         }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+
+            GetReport();
+        }
+
+        private async Task GetReport()
+        {
+            fromDate = Reportfromdate.Date;
+            toDate = Reporttodate.Date;
+
+        }
+             
     }
 
     public class IncomeReportModel

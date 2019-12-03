@@ -23,20 +23,20 @@
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
 
-        <Label Text="Name" Grid.Row="0" Grid.Column="0" FontAttributes="Bold" TextColor="#46A3ED" FontSize="18"/>
-        <Label  x:Name="Name" Grid.Row="0" Grid.Column="1" FontSize="18"/>
-            <Label Text="Contact Number" Grid.Row="1" Grid.Column="0" FontAttributes="Bold" TextColor="#46A3ED" FontSize="18"/>
-        <Label  x:Name="PhoneNo" Grid.Row="1" Grid.Column="1" FontSize="18"/>
-            <Label Text="Age" Grid.Row="2" Grid.Column="0" FontAttributes="Bold" TextColor="#46A3ED" FontSize="18"/>
-        <Label x:Name="Age" Grid.Row="2" Grid.Column="1"  FontSize="18"/>
-            <Label Text="Sex" Grid.Row="3" Grid.Column="0" FontAttributes="Bold" TextColor="#46A3ED" FontSize="18"/>
-        <Label x:Name="Sex" Grid.Row="3" Grid.Column="1"  FontSize="18"/>
-            <Label Text="Address" Grid.Row="4" Grid.Column="0" FontAttributes="Bold" TextColor="#46A3ED" FontSize="18"/>
-        <Label x:Name="Address" Grid.Row="4" Grid.Column="1"  FontSize="18"/>
+                <Label Text="Name" Style="{StaticResource FieldTitle}" Grid.Row="0" Grid.Column="0" FontAttributes="Bold" TextColor="#46A3ED" FontSize="18"/>
+                <Label  x:Name="Name" Grid.Row="0" Grid.Column="1" FontSize="18"  Style="{StaticResource Menu}"/>
+                <Label Text="Contact Number"  Style="{StaticResource FieldTitle}" Grid.Row="1" Grid.Column="0" FontAttributes="Bold" TextColor="#46A3ED" FontSize="18"/>
+                <Label  x:Name="PhoneNo" Grid.Row="1" Grid.Column="1" FontSize="18"  Style="{StaticResource Menu}"/>
+                <Label Text="Age"  Style="{StaticResource FieldTitle}" Grid.Row="2" Grid.Column="0" FontAttributes="Bold" TextColor="#46A3ED" FontSize="18"/>
+                <Label x:Name="Age" Grid.Row="2" Grid.Column="1"  FontSize="18"  Style="{StaticResource Menu}"/>
+                <Label Text="Sex"  Style="{StaticResource FieldTitle}" Grid.Row="3" Grid.Column="0" FontAttributes="Bold" TextColor="#46A3ED" FontSize="18"/>
+                <Label x:Name="Sex" Grid.Row="3" Grid.Column="1"  FontSize="18"  Style="{StaticResource Menu}"/>
+                <Label Text="Address"  Style="{StaticResource FieldTitle}" Grid.Row="4" Grid.Column="0" FontAttributes="Bold" TextColor="#46A3ED" FontSize="18"/>
+                <Label x:Name="Address" Grid.Row="4" Grid.Column="1"  FontSize="18"  Style="{StaticResource Menu}"/>
      </Grid>
         <StackLayout HorizontalOptions="FillAndExpand">
             <StackLayout HorizontalOptions="StartAndExpand"  Orientation="Horizontal">
-                <Label Text="Treatment List" TextColor="#1976D3"  HeightRequest="35" FontSize="22" HorizontalOptions="FillAndExpand"/>
+                    <Label Text="Treatment List" TextColor="#1976D3" Style="{StaticResource FieldTitle}"  HeightRequest="35" FontSize="22" HorizontalOptions="FillAndExpand"/>
                 <Image Source="sortdown.png" VerticalOptions="Center" />
             </StackLayout>
             <ListView x:Name="treatmentlist" HasUnevenRows="True" SeparatorColor="#1976D3" ItemSelected="Treatmentlist_ItemSelected" >
@@ -49,10 +49,10 @@
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
                                     <StackLayout Orientation="Vertical">
-                                        <Label FontSize="18" Text="{Binding SerialNo, StringFormat='Treatment: {0}'}"/>
-                                        <Label FontSize="15" Text="{Binding TreatmentDate, StringFormat='{0:dd/mm/yy}'}"/>
-                                    </StackLayout>                                    
-                                    <Label FontSize="15" HorizontalOptions="EndAndExpand" Text="{Binding TreatmentCost, StringFormat='Cost : Rs.{0}'}"/>
+                                            <Label FontSize="18" Style="{StaticResource Menu}" Text="{Binding SerialNo, StringFormat='Treatment: {0}'}"/>
+                                            <Label FontSize="15" Style="{StaticResource Menu}" Text="{Binding TreatmentDate, StringFormat='{0:dd/mm/yy}'}"/>
+                                    </StackLayout>
+                                        <Label FontSize="15" HorizontalOptions="EndAndExpand" Style="{StaticResource Menu}" Text="{Binding TreatmentCost, StringFormat='Cost : Rs.{0}'}"/>
                                 </StackLayout>
                             </StackLayout>
                         </ViewCell>

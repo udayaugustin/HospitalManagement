@@ -9,18 +9,18 @@
     <ContentPage Title="Info" x:Name="PatientInfoBlock">
         <ScrollView>
             <StackLayout Padding="20">
-                <Label Text="Cheif Complaint"/>
+                <Label Text="Cheif Complaint" Style="{StaticResource FieldTitle}"/>
                 <controls:ExtendedEditor TextColor="#46A3ED" x:Name="CheifComplaint"/>
 
-                <Label Text="Patient History"/>
+                <Label Text="Patient History" Style="{StaticResource FieldTitle}"/>
                 <controls:ExtendedEditor TextColor="#46A3ED" x:Name="PatientHistory"/>
 
-                <Label Text="Diagnosis"/>
+                <Label Text="Diagnosis" Style="{StaticResource FieldTitle}"/>
                 <controls:ExtendedEditor TextColor="#46A3ED" x:Name="Diagnosis"/>
 
-                <Label Text="Treatment Plan"/>
+                <Label Text="Treatment Plan" Style="{StaticResource FieldTitle}"/>
                 <controls:ExtendedEditor TextColor="#46A3ED" x:Name="TreatmentPlan"/>
-                <Label Text="Cost"/>
+                <Label Text="Cost" Style="{StaticResource FieldTitle}"/>
                 <custom:CustomEntry TextColor="#46A3ED" Keyboard="Numeric"  x:Name="TreatmentCost"/>
                 <Button Text="Save" Clicked="Save"/>
             </StackLayout>
@@ -43,8 +43,8 @@
                                             <Image Source="appoinment.png"/>
                                         </StackLayout>
                                         <StackLayout Orientation="Vertical">
-                                            <Label FontSize="18" Text="{Binding Id, StringFormat='Appointment Id: {0}'}"/>
-                                            <Label FontSize="15" Text="{Binding Date, StringFormat='{0:dd/mm/yy}'}"/>
+                                            <Label Style="{StaticResource Menu}" FontSize="18" Text="{Binding Id, StringFormat='Appointment Id: {0}'}"/>
+                                            <Label Style="{StaticResource Menu}" FontSize="15" Text="{Binding Date, StringFormat='{0:dd/mm/yy}'}"/>
                                         </StackLayout>
                                     </StackLayout>
                                     <controls:ExtendedEditor Placeholder="Plan" TextColor="#46A3ED"  Text="{Binding TreatmentPlan}"/>

@@ -5,16 +5,29 @@
         <OnPlatform x:TypeArguments="x:String" x:Key="ProximaNovaRegular">
             <On Platform="Android" Value="Proxima-nova-regular.ttf#Proxima Nova Rg"/>
         </OnPlatform>
+        <OnPlatform x:TypeArguments="x:String" x:Key="Montserrat-Regular">
+            <On Platform="Android" Value="Montserrat-Regular.ttf#Montserrat Regular"/>
+        </OnPlatform>
         <OnPlatform x:TypeArguments="x:String" x:Key="ProximaNovaBold">
             <On Platform="Android" Value="Proxima-nova-bold.ttf#Proxima Nova Rg Bold"/>
         </OnPlatform>
+        <OnPlatform x:TypeArguments="x:String" x:Key="Montserrat-medium">
+            <On Platform="Android" Value="Montserrat-Medium.ttf#Montserrat Medium"/>
+        </OnPlatform>
+        <OnPlatform x:TypeArguments="x:String" x:Key="Montserrat-SemiBold">
+            <On Platform="Android" Value="Montserrat-SemiBold.ttf#Montserrat SemiBold"/>
+        </OnPlatform>
 
-        <Style TargetType="Label">
-            <Setter Property="FontFamily" Value="{StaticResource ProximaNovaRegular}"/>
+        <Style TargetType="Label" x:Key="Menu">
+            <Setter Property="FontFamily" Value="{StaticResource Montserrat-medium}"/>
+            <Setter Property="TextColor" Value="#46A3ED"/>
+        </Style>
+        <Style TargetType="Label" x:Key="FieldTitle">
+            <Setter Property="FontFamily" Value="{StaticResource Montserrat-SemiBold}"/>
             <Setter Property="TextColor" Value="#46A3ED"/>
         </Style>
         <Style TargetType="Label" x:Key="BalanceTag">
-            <Setter Property="FontFamily" Value="{StaticResource ProximaNovaBold}"/>
+            <Setter Property="FontFamily" Value="{StaticResource Montserrat-medium}"/>
             <Setter Property="TextColor" Value="#46A3ED"/>
         </Style>
 
@@ -24,7 +37,7 @@
         </Style>
 
         <Style TargetType="Button">
-            <Setter Property="FontFamily" Value="{StaticResource ProximaNovaRegular}"/>
+            <Setter Property="FontFamily" Value="{StaticResource Montserrat-medium}"/>
             <Setter Property="TextColor" Value="White"/>
             <Setter Property="BackgroundColor" Value="#46A3ED"/>
             <Setter Property="WidthRequest" Value="120"/>
@@ -32,7 +45,11 @@
         </Style>
 
         <Style TargetType="DatePicker">
-            <Setter Property="FontFamily" Value="{StaticResource ProximaNovaRegular}"/>
+            <Setter Property="FontFamily" Value="{StaticResource Montserrat-SemiBold}"/>
+            <Setter Property="TextColor" Value="#46A3ED"/>
+        </Style>
+        <Style TargetType="Picker">
+            <Setter Property="FontFamily" Value="{StaticResource Montserrat-SemiBold}"/>
             <Setter Property="TextColor" Value="#46A3ED"/>
         </Style>
 
