@@ -19,5 +19,7 @@ namespace HospitalManagement.Model
         public string TreatmentPlan { get; set; }
 
         public string TreatmentDone { get; set; }
+
+        public int SerialNo { get; set; }
     }
 }

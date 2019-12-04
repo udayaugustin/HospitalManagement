@@ -54,5 +54,6 @@ namespace HospitalManagement.Views
             var treatment = e.SelectedItem as Treatment;
             Navigation.PushAsync(new TreatmentDetailPage(patient.Id, treatment));
         }
+
     }
 }

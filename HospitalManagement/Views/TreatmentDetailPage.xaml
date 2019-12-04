@@ -5,6 +5,9 @@
             xmlns:controls="clr-namespace:HospitalManagement.Control"
             xmlns:custom="clr-namespace:HospitalManagement"
             x:Name="TreatmentDetailView" Title="Treatment Detail">
+    <NavigationPage.TitleView>
+        <Label Text="Treatment Detail" Style="{StaticResource NavigationTitle}"/>
+    </NavigationPage.TitleView>
     <!--Pages can be added as references or inline-->    
     <ContentPage Title="Info" x:Name="PatientInfoBlock">
         <ScrollView>

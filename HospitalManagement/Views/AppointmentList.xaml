@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HospitalManagement.Views.AppointmentList">
+    <NavigationPage.TitleView>
+        <Label Text="Appointment List" Style="{StaticResource NavigationTitle}"/>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <ListView x:Name="appointmentlistview" HasUnevenRows="True" SeparatorColor="#1976D3" ItemSelected="Appointmentlistview_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="10">
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="appoinment.png"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical">
+                                <Label FontSize="18" Style="{StaticResource Menu}" Text="{Binding SerialNo,  StringFormat='Treatment: {0}'}"/>
+                                <Label FontSize="15"  Style="{StaticResource Menu}" Text="{Binding TreatmentDate, StringFormat='{0:dd/mm/yy}'}"/>
+                            </StackLayout>
+                            <Label FontSize="15" HorizontalOptions="End" Style="{StaticResource Menu}" Text="{Binding TreatmentCost, StringFormat='Cost : Rs.{0}'}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

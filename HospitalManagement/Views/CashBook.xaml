@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HospitalManagement.Views.CashBook"
              xmlns:custom="clr-namespace:HospitalManagement" Title="Cash Book">
+    <NavigationPage.TitleView>
+        <Label Text="Cash Book" Style="{StaticResource NavigationTitle}"/>
+    </NavigationPage.TitleView>
     <ContentPage Title="Income">
         <StackLayout Padding="10">
             <ScrollView>

@@ -32,7 +32,7 @@
         </Style>
 
         <Style TargetType="Entry">
-            <Setter Property="FontFamily" Value="{StaticResource ProximaNovaRegular}"/>
+            <Setter Property="FontFamily" Value="{StaticResource Montserrat-Regular}"/>
             <Setter Property="TextColor" Value="#46A3ED"/>
         </Style>
 
@@ -54,13 +54,14 @@
         </Style>
 
         <Style TargetType="Editor">
-            <Setter Property="FontFamily" Value="{StaticResource ProximaNovaRegular}"/>
+            <Setter Property="FontFamily" Value="{StaticResource Montserrat-Regular}"/>
             <Setter Property="AutoSize" Value="TextChanges"/>
             <!--<Setter Property="BackgroundColor" Value="#EFF8FB"/>-->
         </Style>
 
         <Style x:Key="NavigationTitle" TargetType="Label">
             <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontFamily" Value="{StaticResource Montserrat-SemiBold}"/>
             <Setter Property="TextColor" Value="White"/>
             <Setter Property="FontAttributes" Value="Bold"/>
         </Style>
@@ -68,7 +69,7 @@
         <Style x:Key="BalanceAmount" TargetType="Label" BasedOn="{StaticResource BalanceTag}">
             <Setter Property="TextColor" Value="Red"/>
             <Setter Property="FontAttributes" Value="Italic"/>
-            <Setter Property="FontFamily" Value="{StaticResource ProximaNovaRegular}"/>
+            <Setter Property="FontFamily" Value="{StaticResource Montserrat-Regular}"/>
             <Setter Property="FontSize" Value="18"/>
             <Setter Property="HorizontalOptions" Value="EndAndExpand"/>
            <Style.Triggers>

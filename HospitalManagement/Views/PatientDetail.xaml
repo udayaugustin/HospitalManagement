@@ -35,10 +35,15 @@
                 <Label x:Name="Address" Grid.Row="4" Grid.Column="1"  FontSize="18"  Style="{StaticResource Menu}"/>
      </Grid>
         <StackLayout HorizontalOptions="FillAndExpand">
-            <StackLayout HorizontalOptions="StartAndExpand"  Orientation="Horizontal">
-                    <Label Text="Treatment List" TextColor="#1976D3" Style="{StaticResource FieldTitle}"  HeightRequest="35" FontSize="22" HorizontalOptions="FillAndExpand"/>
-                <Image Source="sortdown.png" VerticalOptions="Center" />
-            </StackLayout>
+            <StackLayout Padding="10" Orientation="Horizontal">
+                    <Label Text="Treatment List" TextColor="#1976D3" Style="{StaticResource FieldTitle}"  HeightRequest="35" FontSize="22" HorizontalOptions="Start"/>
+                <Image Source="sortdown.png" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+                    <Image Source="addicon.png" HorizontalOptions="EndAndExpand">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="AddTreatment"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
             <ListView x:Name="treatmentlist" HasUnevenRows="True" SeparatorColor="#1976D3" ItemSelected="Treatmentlist_ItemSelected" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -47,8 +52,8 @@
                                 <StackLayout Orientation="Horizontal">
                                     <Image Source="appoinment.png"/>
                                 </StackLayout>
-                                <StackLayout Orientation="Horizontal">
-                                    <StackLayout Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
                                             <Label FontSize="18" Style="{StaticResource Menu}" Text="{Binding SerialNo, StringFormat='Treatment: {0}'}"/>
                                             <Label FontSize="15" Style="{StaticResource Menu}" Text="{Binding TreatmentDate, StringFormat='{0:dd/mm/yy}'}"/>
                                     </StackLayout>
@@ -59,7 +64,6 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Button Text="New Treatment" Clicked="AddTreatment"  HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
         </StackLayout>
     </StackLayout>
     </ScrollView>
