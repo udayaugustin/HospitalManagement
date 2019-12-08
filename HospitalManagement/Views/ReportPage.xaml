@@ -1,20 +1,17 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HospitalManagement.Views.ReportPage">
-    <NavigationPage.TitleView>
-        <Label Text="Report Detail" Style="{StaticResource NavigationTitle}"/>
-    </NavigationPage.TitleView>
     <ContentPage Title="Income">
         <ScrollView>
         <StackLayout Padding="10">
             <StackLayout Orientation="Horizontal">
-                    <DatePicker x:Name="IncomeFromDate" TextColor="#46A3ED"/>
-                    <Label Text="To" Style="{StaticResource FieldTitle}" VerticalTextAlignment="Center"/>
-                    <DatePicker x:Name="IncomeToDate" TextColor="#46A3ED"/>                
+                <DatePicker x:Name="IncomeFromDate" TextColor="#46A3ED"/>
+                <Label Text="To" VerticalTextAlignment="Center"/>
+                <DatePicker x:Name="IncomeToDate" TextColor="#46A3ED"/>                
             </StackLayout>
             <Button Text="Submit" Clicked="GenerateIncomeReport"/>
             <StackLayout Orientation="Horizontal">
-                    <Label x:Name="TotalIncome" Style="{StaticResource Menu}" HorizontalOptions="StartAndExpand"/>
-                    <Label x:Name="TotalPending" Style="{StaticResource Menu}" HorizontalOptions="EndAndExpand"/>
+                <Label x:Name="TotalIncome" HorizontalOptions="StartAndExpand"/>
+                <Label x:Name="TotalPending" HorizontalOptions="EndAndExpand"/>
             </StackLayout>
             <StackLayout>
                  <Grid BackgroundColor="#50B1FF" Padding="10">
@@ -26,9 +23,9 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>                        
                     </Grid.ColumnDefinitions>
-                        <Label Text="Patient Name" Style="{StaticResource FieldTitle}" TextColor="White" VerticalTextAlignment="Center" FontSize="18" HorizontalTextAlignment="Start" FontAttributes="Bold" Grid.Column="0" Grid.Row="0"/>
-                        <Label Text="Paid Amount" Style="{StaticResource FieldTitle}" TextColor="White" VerticalTextAlignment="Center" FontSize="18" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="1" Grid.Row="0"/>
-                        <Label Text="Balance" Style="{StaticResource FieldTitle}" TextColor="White" VerticalTextAlignment="Center" FontSize="18" HorizontalTextAlignment="End" FontAttributes="Bold" Grid.Column="2" Grid.Row="0"/>                    
+                    <Label Text="Patient Name" TextColor="White" VerticalTextAlignment="Center" FontSize="18" HorizontalTextAlignment="Start" FontAttributes="Bold" Grid.Column="0" Grid.Row="0"/>
+                    <Label Text="Paid Amount" TextColor="White" VerticalTextAlignment="Center" FontSize="18" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="1" Grid.Row="0"/>
+                    <Label Text="Balance" TextColor="White" VerticalTextAlignment="Center" FontSize="18" HorizontalTextAlignment="End" FontAttributes="Bold" Grid.Column="2" Grid.Row="0"/>                    
                 </Grid>
             </StackLayout>
 
@@ -42,9 +39,9 @@
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>                                    
                                 </Grid.ColumnDefinitions>
-                                    <Label Style="{StaticResource Menu}" Text="{Binding Name, StringFormat='{0:dd-MMM-yy}'}" FontSize="16" VerticalTextAlignment="Start" HorizontalTextAlignment="Start"  Grid.Column="0"/>
-                                    <Label Style="{StaticResource Menu}" Text="{Binding ReceivedAmount}" VerticalTextAlignment="Center" FontSize="16" HorizontalTextAlignment="Center"  Grid.Column="1"/>
-                                    <Label Style="{StaticResource Menu}" Text="{Binding BalanceAmount}" VerticalTextAlignment="Center" FontSize="16" HorizontalTextAlignment="End" Grid.Column="2"/>
+                                <Label Text="{Binding Name, StringFormat='{0:dd-MMM-yy}'}" FontSize="16" VerticalTextAlignment="Start" HorizontalTextAlignment="Start"  Grid.Column="0"/>
+                                <Label Text="{Binding ReceivedAmount}" VerticalTextAlignment="Center" FontSize="16" HorizontalTextAlignment="Center"  Grid.Column="1"/>
+                                <Label Text="{Binding BalanceAmount}" VerticalTextAlignment="Center" FontSize="16" HorizontalTextAlignment="End" Grid.Column="2"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
@@ -58,12 +55,12 @@
         <ScrollView>
         <StackLayout Padding="10">
             <StackLayout Orientation="Horizontal">
-                    <DatePicker x:Name="ExpenseFromDate"  TextColor="#46A3ED"/>
-                    <Label Text="To" VerticalTextAlignment="Center" Style="{StaticResource FieldTitle}"/>
-                    <DatePicker x:Name="ExpenseToDate"  TextColor="#46A3ED"/>
+                <DatePicker x:Name="ExpenseFromDate" TextColor="#46A3ED"/>
+                <Label Text="To" VerticalTextAlignment="Center"/>
+                <DatePicker x:Name="ExpenseToDate" TextColor="#46A3ED"/>
             </StackLayout>
             <Button Text="Submit" Clicked="GenerateExpenseReport"/>
-                <Label x:Name="TotalExpense" Style="{StaticResource FieldTitle}" HorizontalOptions="EndAndExpand"/>
+            <Label x:Name="TotalExpense" HorizontalOptions="EndAndExpand"/>
                 <Grid BackgroundColor="#50B1FF" Padding="10">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -73,9 +70,9 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>                        
                     </Grid.ColumnDefinitions>
-                    <Label Text="Date" Style="{StaticResource FieldTitle}" TextColor="White" FontSize="18" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" FontAttributes="Bold" Grid.Column="0" Grid.Row="0"/>
-                    <Label Text="Name/Type" Style="{StaticResource FieldTitle}" TextColor="White"  FontSize="18" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="1" Grid.Row="0"/>
-                    <Label Text="Amount" Style="{StaticResource FieldTitle}"  TextColor="White"  FontSize="18"  VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontAttributes="Bold" Grid.Column="2" Grid.Row="0"/>                    
+                    <Label Text="Date" TextColor="White" FontSize="18" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" FontAttributes="Bold" Grid.Column="0" Grid.Row="0"/>
+                    <Label Text="Name/Type" TextColor="White"  FontSize="18" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Column="1" Grid.Row="0"/>
+                    <Label Text="Amount"  TextColor="White"  FontSize="18"  VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontAttributes="Bold" Grid.Column="2" Grid.Row="0"/>                    
                 </Grid>
                 <ListView x:Name="expenseTransctionListView" SeparatorColor="#AFDCFF" HasUnevenRows="True">
                 <ListView.ItemTemplate>
@@ -91,10 +88,10 @@
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>                                    
                                 </Grid.ColumnDefinitions>
-                                    <Label Style="{StaticResource Menu}" Text="{Binding Date, StringFormat='{0:dd-MMM-yy}'}" Grid.RowSpan="2" FontSize="16" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"  Grid.Column="0"/>
-                                    <Label Text="{Binding Name}" Style="{StaticResource Menu}" VerticalTextAlignment="Center" FontSize="16" HorizontalTextAlignment="Center" Grid.Row="0"  Grid.Column="1"/>
-                                    <Label Text="{Binding Type}" Style="{StaticResource Menu}" VerticalTextAlignment="Center" FontSize="16" HorizontalTextAlignment="Center" Grid.Row="1"  Grid.Column="1"/>
-                                    <Label Text="{Binding PaidAmount}" Style="{StaticResource Menu}" VerticalTextAlignment="Center" FontSize="16" Grid.RowSpan="2" HorizontalTextAlignment="End" Grid.Column="2"/>
+                                <Label Text="{Binding Date, StringFormat='{0:dd-MMM-yy}'}" Grid.RowSpan="2" FontSize="16" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"  Grid.Column="0"/>
+                                <Label Text="{Binding Name}" VerticalTextAlignment="Center" FontSize="16" HorizontalTextAlignment="Center" Grid.Row="0"  Grid.Column="1"/>
+                                <Label Text="{Binding Type}" VerticalTextAlignment="Center" FontSize="16" HorizontalTextAlignment="Center" Grid.Row="1"  Grid.Column="1"/>                                                                
+                                <Label Text="{Binding PaidAmount}" VerticalTextAlignment="Center" FontSize="16" Grid.RowSpan="2" HorizontalTextAlignment="End" Grid.Column="2"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

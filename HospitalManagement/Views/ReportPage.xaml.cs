@@ -16,7 +16,7 @@ namespace HospitalManagement.Views
         private List<IncomeReportModel> incomeReportList;
         private List<ExpenseTransaction> expenseReportList;
         private int totalExpense;
-        
+        private int totalIncome;
 
         public  ReportPage()
         {
@@ -25,9 +25,16 @@ namespace HospitalManagement.Views
             fromDate = IncomeFromDate.Date;
             toDate = IncomeToDate.Date;
             connection = DependencyService.Get<ISQLiteDb>().GetConnection();
+            SetDatePickerDate();
 
             GetIncomeReport();
             GetExpenseReport();
+        }
+
+        private void SetDatePickerDate()
+        {
+            var startDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+            IncomeFromDate.Date = ExpenseFromDate.Date = Reportfromdate.Date = startDate;
         }
 
         private async Task GetIncomeReport()
@@ -58,7 +65,8 @@ namespace HospitalManagement.Views
             }
 
             incomeListview.ItemsSource = incomeReportList;
-            TotalIncome.Text = "Total Income Rs." + incomeReportList.Sum(i => i.ReceivedAmount);
+            totalIncome = incomeReportList.Sum(i => i.ReceivedAmount);
+            TotalIncome.Text = "Total Income Rs." + totalIncome;
             TotalPending.Text = "Total Pending Rs." + incomeReportList.Sum(i => i.BalanceAmount);
         }
 
@@ -106,7 +114,7 @@ namespace HospitalManagement.Views
             int garbagetotal;
             int otherstotal;
 
-            TotalIncomereport.Text = "Total Revinue Rs." + TotalIncome;
+            TotalIncomereport.Text = "Total Revinue Rs." + totalIncome;
             expenseReportList = new List<ExpenseTransaction>(await connection.Table<ExpenseTransaction>().Where(p => p.Date >= fromDate && p.Date <= toDate).ToListAsync());
             totalExpense = expenseReportList.Sum(p =>p.PaidAmount);
             TotalExpancereport.Text = "Total Expense Rs." + totalExpense;
@@ -129,7 +137,7 @@ namespace HospitalManagement.Views
             otherstotal = expenseReportList.Sum(r => r.PaidAmount);
             OthersAmount.Text = Convert.ToString(otherstotal);
 
-            //   TotalIncomereport.Text = "Total Income Rs." + incomeReportList.Sum(i => i.ReceivedAmount);
+            //TotalIncomereport.Text = "Total Income Rs." + incomeReportList.Sum(i => i.ReceivedAmount);
 
         }
              
