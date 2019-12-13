@@ -56,7 +56,12 @@ namespace HospitalManagement.Views
         {
             if(treatmentId != 0)
             {
-                var list = await connection.Table<Appoinment>().Where(a => a.TreatmentId == treatmentId).ToListAsync();
+                var list = await connection.Table<Appoinment>().Where(a => a.TreatmentId == treatmentId).OrderByDescending(a => a.Id).ToListAsync();
+                var count = list.Count;
+                list.ForEach(l =>
+                {
+                    l.SerialNo = count--;                    
+                });
                 appoinmentList = new ObservableCollection<Appoinment>(list);
                 listView.ItemsSource = null;
                 listView.ItemsSource = appoinmentList;
@@ -109,10 +114,27 @@ namespace HospitalManagement.Views
             mainPage.Detail.Navigation.PushModalAsync(new AddAppointment(treatmentId));
         }
 
-        private void UpdateAppointment(object sender, EventArgs e)
-        {
-            var appointment = (sender as Button).BindingContext;
-            connection.UpdateAsync(appointment);
+        private async void UpdateAppointment(object sender, EventArgs e)
+        {         
+            var appointment = (sender as Button).BindingContext as Appoinment;
+            var isSheduleNextAppointment = appointment.IsSheduleNextVisit;
+            appointment.IsSheduleNextVisit = false;
+
+            await connection.UpdateAsync(appointment);
+            
+            if (isSheduleNextAppointment)
+            {
+                var date = appointment.NextAppointmentDate;
+                var time = appointment.NextAppointmentTime;
+                
+                var newAppointment = new Appoinment()
+                {
+                    TreatmentId = treatmentId,
+                    Date = date,
+                    Time = time                    
+                };
+                await connection.InsertAsync(newAppointment);
+            }
         }
     }
 }

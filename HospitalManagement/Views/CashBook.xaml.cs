@@ -26,7 +26,7 @@ namespace HospitalManagement.Views
             startDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
             ExpenseTransactionTitle.Text = ReceivedTransactionTitle.Text = "Date: " + startDate.Date.ToString("dd-MMM-yy") + " To " + DateTime.Today.Date.ToString("dd-MMM-yy");
             type.ItemsSource = ExpenseType.ExpenseTypeList();
-            
+
             GetPatientList();
             GetPatientTransactionList();
             GetExpenseTransactionList();
@@ -37,7 +37,7 @@ namespace HospitalManagement.Views
             patientList = new List<Patient>();
             patientList = await connection.Table<Patient>().ToListAsync();
             PatientListPicker.ItemsSource = patientList;
-            PatientListPicker.ItemDisplayBinding = new Binding("Name");                                   
+            PatientListPicker.ItemDisplayBinding = new Binding("Name");
         }
 
         private async void UpdateReceivedAmount(object sender, EventArgs e)
@@ -74,7 +74,7 @@ namespace HospitalManagement.Views
                 Type = Convert.ToString(type.SelectedItem),
                 PaidAmount = Convert.ToInt32(PaidAmount.Text)
             };
-            
+
             await connection.InsertAsync(expenseTransaction);
             expenseTransactionList.Insert(0, expenseTransaction);
 
@@ -82,7 +82,7 @@ namespace HospitalManagement.Views
             UpdateTotalExpanseLabel();
 
             Name.Text = "";
-            PaidAmount.Text = "";            
+            PaidAmount.Text = "";
         }
         private async Task GetPatientTransactionList()
         {
@@ -115,7 +115,7 @@ namespace HospitalManagement.Views
         {
             TotalIncome.Text = "Total Income Rs." + totalIncome;
         }
-        
+
         private void UpdateTotalExpanseLabel()
         {
             TotalExpense.Text = "Total Expense Rs." + totalExpense;

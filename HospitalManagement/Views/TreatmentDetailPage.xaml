@@ -24,7 +24,7 @@
                 <Label Text="Treatment Plan" Style="{StaticResource FieldTitle}"/>
                 <controls:ExtendedEditor TextColor="#46A3ED" x:Name="TreatmentPlan"/>
                 <Label Text="Cost" Style="{StaticResource FieldTitle}"/>
-                <custom:CustomEntry TextColor="#46A3ED" Keyboard="Numeric"  x:Name="TreatmentCost"/>
+                <custom:CustomEntry TextColor="#46A3ED" Keyboard="Numeric"  x:Name="TreatmentCost"/>                
                 <Button Text="Save" Clicked="Save"/>
             </StackLayout>
         </ScrollView>
@@ -34,24 +34,40 @@
         <ContentPage.ToolbarItems>
             <ToolbarItem IconImageSource="add.png" Order="Primary" Clicked="OpenAddAppointmentPage" />
         </ContentPage.ToolbarItems>
-        <StackLayout Padding="20" BackgroundColor="#00000029">
+        <StackLayout Padding="10" BackgroundColor="#00000029">
             <ListView  ItemsSource="{Binding appoinmentList, Mode=TwoWay}" HasUnevenRows="True" SeparatorVisibility="None" x:Name="listView">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <Frame CornerRadius="10" BackgroundColor="#fff">
-                                <StackLayout Orientation="Vertical" Padding="10" >
+                                <StackLayout Orientation="Vertical" Padding="5" >
                                     <StackLayout Orientation="Horizontal">
                                         <StackLayout Orientation="Horizontal">
                                             <Image Source="appoinment.png"/>
                                         </StackLayout>
                                         <StackLayout Orientation="Vertical">
-                                            <Label Style="{StaticResource Menu}" FontSize="18" Text="{Binding Id, StringFormat='Appointment Id: {0}'}"/>
-                                            <Label Style="{StaticResource Menu}" FontSize="15" Text="{Binding Date, StringFormat='{0:dd/mm/yy}'}"/>
+                                            <Label Style="{StaticResource Menu}" FontSize="18" Text="{Binding SerialNo, StringFormat='Appointment No: {0}'}"/>                                                                                        
                                         </StackLayout>
                                     </StackLayout>
-                                    <controls:ExtendedEditor Placeholder="Plan" TextColor="#46A3ED"  Text="{Binding TreatmentPlan}"/>
-                                    <controls:ExtendedEditor Placeholder="Action Done" TextColor="#46A3ED" Text="{Binding TreatmentDone}"/>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Style="{StaticResource Menu}" FontSize="15" Text="{Binding Date, StringFormat='Date: {0:dd/mm/yy}'}"/>
+                                        <Label Style="{StaticResource Menu}" FontSize="15" Text="{Binding Time, StringFormat='Time: {0}'}"/>
+                                    </StackLayout>
+                                    <Label Text="Plan" Style="{StaticResource FieldTitle}"/>
+                                    <controls:ExtendedEditor TextColor="#46A3ED"  Text="{Binding TreatmentPlan}"/>
+                                    <Label Text="Treatment Done" Style="{StaticResource FieldTitle}"/>
+                                    <controls:ExtendedEditor TextColor="#46A3ED" Text="{Binding TreatmentDone}"/>
+
+                                    <StackLayout Orientation="Horizontal">
+                                        <CheckBox x:Name="SheduleVisit" IsChecked="{Binding IsSheduleNextVisit}" />
+                                        <Label Text="Shedule next visit" VerticalTextAlignment="Center" VerticalOptions="Center"/>
+                                    </StackLayout>
+                                    <Label Text="Next Appointment Date" TextColor="#46A3ED" IsVisible="{Binding Source={x:Reference SheduleVisit}, Path=IsChecked}" Style="{StaticResource FieldTitle}"/>
+                                    <StackLayout Orientation="Horizontal">
+                                        <DatePicker x:Name="NextAppointmentDate" Date="{Binding NextAppointmentDate}" IsVisible="{Binding Source={x:Reference SheduleVisit}, Path=IsChecked}"/>
+                                        <TimePicker TextColor="#46A3ED" Time="{Binding NextAppointmentTime}" x:Name="NextAppointmentTime"/>                                        
+                                    </StackLayout>
+                                    
                                     <Button Text="Update" Clicked="UpdateAppointment" CommandParameter="{Binding .}"/>
                                 </StackLayout>
                             </Frame>

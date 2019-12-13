@@ -32,7 +32,7 @@ namespace HospitalManagement.Views
         {
             var allBookings = new List<Booking>();
             allBookings = await connection.Table<Booking>().Where(b => b.IsCompleted == false)
-                .OrderByDescending(b => b.CheckinDate)                
+                .OrderByDescending(b => b.CheckinDate)
                 .ToListAsync();
 
             bookingList = new ObservableCollection<Booking>(allBookings);
@@ -43,7 +43,7 @@ namespace HospitalManagement.Views
 
         private void BookingListTappedPage_CurrentPageChanged(object sender, EventArgs e)
         {
-            UpdateBookingList();   
+            UpdateBookingList();
         }
 
         private void SetActivePage(string pageTitle)
@@ -86,7 +86,7 @@ namespace HospitalManagement.Views
 
             TodayListview.ItemsSource = items;
 
-            TodayNoRecordLabel.IsVisible = !(items.Count > 0);                
+            TodayNoRecordLabel.IsVisible = !(items.Count > 0);
         }
 
         private void DisplayFutureBookings()
@@ -103,7 +103,7 @@ namespace HospitalManagement.Views
         {
             AllListview.ItemsSource = bookingList;
 
-            AllNoRecordLabel.IsVisible = !(bookingList.Count > 0);            
+            AllNoRecordLabel.IsVisible = !(bookingList.Count > 0);
         }
 
         private async void Edit_Clicked(object sender, EventArgs e)
@@ -130,7 +130,7 @@ namespace HospitalManagement.Views
                 var booking = deletemenuItem.BindingContext as Booking;
 
                 if (booking != null)
-                {                    
+                {
                     await connection.DeleteAsync(booking);
                     bookingList.Remove(booking);
                     UpdateBookingList();

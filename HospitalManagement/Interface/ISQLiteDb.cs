@@ -5,6 +5,8 @@ namespace HospitalManagement
     public interface ISQLiteDb
     {
         SQLiteAsyncConnection GetConnection();
+
+        SQLiteConnection GetNormalConnection();
     }
 }
 

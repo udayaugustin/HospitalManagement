@@ -45,58 +45,58 @@
     <Folder Include="Views\Css\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Views\AddAppointment.xaml.cs">
-      <DependentUpon>AddAppointment.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\TreatmentDetailPage.xaml.cs">
-      <DependentUpon>TreatmentDetailPage.xaml</DependentUpon>
-    </Compile>
+    <EmbeddedResource Update="Views\AddAppointment.xaml.cs">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\TreatmentDetailPage.xaml.cs">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Update="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="MainPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\AddAppointment.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\AddPatient.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\BookingListTappedPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\CashBook.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\EditPatient.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\IntialValidation.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\LicenseViolation.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\LoginPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\MasterPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\PatientDetail.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\PatientList.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\SyncData.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\TreatmentDetailPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
+    <EmbeddedResource Update="App.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MainPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\AddAppointment.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\AddPatient.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\BookingListTappedPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\CashBook.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\EditPatient.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\IntialValidation.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\LicenseViolation.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\LoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MasterPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PatientDetail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PatientList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SyncData.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\TreatmentDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

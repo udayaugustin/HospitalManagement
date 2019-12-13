@@ -10,15 +10,15 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Orientation="Horizontal" Padding="10">
+                        <StackLayout Orientation="Vertical" Padding="10">
                             <StackLayout Orientation="Horizontal">
-                                <Image Source="appoinment.png"/>
+                                <Label FontSize="18" Text="{Binding Patient.Name}" Style="{StaticResource Menu}" />
+                                <Label FontSize="15" HorizontalOptions="EndAndExpand" Style="{StaticResource Menu}" Text="{Binding SerialNo,  StringFormat='No: {0}'}"/>
                             </StackLayout>
-                            <StackLayout Orientation="Vertical">
-                                <Label FontSize="18" Style="{StaticResource Menu}" Text="{Binding SerialNo,  StringFormat='Treatment: {0}'}"/>
-                                <Label FontSize="15"  Style="{StaticResource Menu}" Text="{Binding TreatmentDate, StringFormat='{0:dd/mm/yy}'}"/>
-                            </StackLayout>
-                            <Label FontSize="15" HorizontalOptions="End" Style="{StaticResource Menu}" Text="{Binding TreatmentCost, StringFormat='Cost : Rs.{0}'}"/>
+                            <StackLayout Orientation="Horizontal">
+                                <Label FontSize="15"  Style="{StaticResource Menu}" Text="{Binding AppointDateTime}"/>
+                                <Label Text="{Binding Patient.MobileNo}" Style="{StaticResource Menu}" HorizontalOptions="EndAndExpand" />
+                            </StackLayout>                            
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

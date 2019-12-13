@@ -18,6 +18,14 @@ namespace HospitalManagement.Droid
 
 			return new SQLiteAsyncConnection(path);
 		}
-	}
+
+        public SQLiteConnection GetNormalConnection()
+        {
+            var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            var path = Path.Combine(documentsPath, "MySQLite.db3");
+
+            return new SQLiteConnection(path);
+        }
+    }
 }
 

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace HospitalManagement.Model
 {
-    class Appoinment
+    public class Appoinment
     {
         [PrimaryKey,AutoIncrement]        
         public int Id { get; set; }
@@ -21,5 +21,13 @@ namespace HospitalManagement.Model
         public string TreatmentDone { get; set; }
 
         public int SerialNo { get; set; }
+
+
+        //The below fields are used to stored the next appointment
+        public bool IsSheduleNextVisit { get; set; }
+
+        public DateTime NextAppointmentDate { get; set; }
+
+        public TimeSpan NextAppointmentTime { get; set; }        
     }
 }
